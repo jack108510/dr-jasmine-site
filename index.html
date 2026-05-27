@@ -3,489 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Jasmine — Bringing Wellness Home</title>
-<meta name="description" content="Dr. Jasmine Therese Esguerra — Author, Speaker, Healer. The intersection of science, soul, and service.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<title>Dr. Jasmine Therese Esguerra — The Living Love Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-/* Reset & Base */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; color: #2C2C2C; background: #FAFAF8; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-img { max-width: 100%; display: block; }
-a { text-decoration: none; color: inherit; }
-h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; font-weight: 500; line-height: 1.2; }
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Playfair Display', Georgia, serif; background: #fdfbf7; color: #1a1918; line-height: 1.8; -webkit-font-smoothing: antialiased; }
 
-/* Animations */
-.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-.fade-in-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.fade-in-left.visible { opacity: 1; transform: translateX(0); }
-.fade-in-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.fade-in-right.visible { opacity: 1; transform: translateX(0); }
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,251,247,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #eae7e2; }
+  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 16px 40px; }
+  .nav-brand { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: #1a1918; text-decoration: none; font-weight: 400; }
+  .nav-links { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+  .nav-links a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #76716d; text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover { color: #8b7355; }
+  .nav-sites { display: flex; gap: 20px; margin-left: 24px; padding-left: 24px; border-left: 1px solid #eae7e2; }
+  .nav-sites a { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #8b7355; text-decoration: none; }
 
-/* Buttons */
-.btn { display: inline-block; padding: 14px 36px; border-radius: 4px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.5px; text-transform: uppercase; transition: all 0.3s ease; cursor: pointer; border: none; }
-.btn-primary { background: #8B6F47; color: #fff; }
-.btn-primary:hover { background: #725a38; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(139,111,71,0.3); }
-.btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.6); }
-.btn-outline:hover { background: #fff; color: #8B6F47; border-color: #fff; }
-.btn-outline-dark { background: transparent; color: #8B6F47; border: 1.5px solid #8B6F47; }
-.btn-outline-dark:hover { background: #8B6F47; color: #fff; transform: translateY(-2px); }
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 40px 80px; }
+  .hero-flower { font-size: 28px; margin-bottom: 40px; opacity: 0.6; }
+  .hero h1 { font-size: clamp(32px, 5vw, 64px); font-weight: 400; letter-spacing: 2px; margin-bottom: 16px; line-height: 1.2; }
+  .hero-subtitle { font-size: clamp(16px, 2vw, 22px); font-weight: 400; color: #8b7355; letter-spacing: 6px; text-transform: uppercase; margin-bottom: 32px; }
+  .hero-line { font-size: clamp(13px, 1.5vw, 16px); color: #76716d; font-style: italic; letter-spacing: 1px; }
+  .hero-divider { width: 60px; height: 1px; background: #8b7355; margin: 40px auto; opacity: 0.4; }
 
-/* Container */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  /* SECTION */
+  section { padding: 100px 40px; }
+  .section-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #8b7355; text-align: center; margin-bottom: 12px; }
+  .section-title { font-size: clamp(24px, 3vw, 40px); font-weight: 400; text-align: center; margin-bottom: 60px; letter-spacing: 1px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
 
-/* ===== NAVBAR ===== */
-.navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0; transition: all 0.4s ease; }
-.navbar.scrolled { background: #fff; padding: 12px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
-.navbar .container { display: flex; align-items: center; justify-content: space-between; }
-.navbar-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #fff; transition: color 0.4s; }
-.navbar.scrolled .navbar-logo { color: #2C2C2C; }
-.navbar-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-.navbar-links a { font-size: 0.85rem; font-weight: 400; letter-spacing: 0.5px; color: rgba(255,255,255,0.85); transition: color 0.3s; text-transform: uppercase; }
-.navbar.scrolled .navbar-links a { color: #555; }
-.navbar-links a:hover { color: #C9A96E; }
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-.hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: all 0.3s; }
-.navbar.scrolled .hamburger span { background: #2C2C2C; }
-.mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #fff; z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 24px; }
-.mobile-menu.active { display: flex; }
-.mobile-menu a { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #2C2C2C; }
-.mobile-menu-close { position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 2rem; cursor: pointer; color: #2C2C2C; }
+  /* TWO PILLARS */
+  .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 1000px; margin: 0 auto; }
+  .pillar { text-align: center; padding: 60px 40px; }
+  .pillar-icon { font-size: 36px; margin-bottom: 24px; }
+  .pillar h3 { font-size: 24px; font-weight: 400; margin-bottom: 8px; letter-spacing: 2px; }
+  .pillar-subtitle { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8b7355; margin-bottom: 20px; }
+  .pillar p { font-size: 15px; color: #76716d; font-style: italic; max-width: 340px; margin: 0 auto; line-height: 1.8; }
+  .pillar-divider { width: 1px; background: #eae7e2; margin: 40px 0; }
 
-/* ===== HERO ===== */
-.hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: url('images/514703304_10165632054490744_3391040824683094374_n.jpg') center/cover no-repeat; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.6)); }
-.hero-content { position: relative; z-index: 2; text-align: center; color: #fff; padding: 0 24px; }
-.hero-label { font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: #C9A96E; margin-bottom: 16px; font-weight: 400; }
-.hero h1 { font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 400; margin-bottom: 8px; letter-spacing: 1px; }
-.hero-sub { font-family: 'Playfair Display', serif; font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 400; font-style: italic; color: rgba(255,255,255,0.9); margin-bottom: 8px; }
-.hero-tagline { font-size: 0.95rem; color: rgba(255,255,255,0.7); font-weight: 300; letter-spacing: 0.5px; }
-.scroll-indicator { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); z-index: 2; }
-.scroll-indicator span { display: block; width: 1px; height: 40px; background: rgba(255,255,255,0.4); margin: 0 auto; position: relative; }
-.scroll-indicator span::after { content: ''; position: absolute; top: 0; left: 0; width: 1px; height: 12px; background: #C9A96E; animation: scrollDown 1.8s infinite; }
-@keyframes scrollDown { 0% { top: 0; opacity: 1; } 100% { top: 28px; opacity: 0; } }
+  /* CARDS */
+  .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; max-width: 900px; margin: 0 auto; }
+  .card { border: 1px solid #eae7e2; padding: 40px; transition: border-color 0.3s; }
+  .card:hover { border-color: #8b7355; }
+  .card h3 { font-size: 18px; font-weight: 400; margin-bottom: 12px; letter-spacing: 1px; }
+  .card p { font-size: 14px; color: #76716d; line-height: 1.7; }
 
-/* ===== SECTION HELPERS ===== */
-.section { padding: 100px 0; }
-.section-label { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: #C9A96E; font-weight: 500; margin-bottom: 12px; }
-.section-heading { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 24px; color: #2C2C2C; }
-.section-text { font-size: 1.05rem; color: #555; line-height: 1.85; max-width: 640px; }
-.section-text + .section-text { margin-top: 16px; }
-.bg-cream { background: #F5F0E8; }
-.bg-dark { background: #3D2E1F; color: #fff; }
-.bg-dark .section-heading { color: #fff; }
-.bg-dark .section-text { color: rgba(255,255,255,0.8); }
-.bg-dark .section-label { color: #C9A96E; }
-.text-center { text-align: center; }
-.text-center .section-text { margin-left: auto; margin-right: auto; }
+  /* RETREATS */
+  .retreats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 900px; margin: 0 auto; }
+  .retreat { padding: 48px 40px; border: 1px solid #eae7e2; text-align: center; }
+  .retreat-tag { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #8b7355; margin-bottom: 16px; }
+  .retreat h3 { font-size: 20px; font-weight: 400; margin-bottom: 12px; letter-spacing: 1px; }
+  .retreat p { font-size: 14px; color: #76716d; line-height: 1.7; margin-bottom: 24px; }
+  .btn-apply { display: inline-block; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8b7355; border: 1px solid #8b7355; padding: 10px 28px; text-decoration: none; transition: all 0.3s; font-family: 'Playfair Display', serif; }
+  .btn-apply:hover { background: #8b7355; color: #fdfbf7; }
 
-/* ===== ABOUT ===== */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.about-img { border-radius: 8px; overflow: hidden; aspect-ratio: 3/4; }
-.about-img img { width: 100%; height: 100%; object-fit: cover; }
+  /* CALENDAR */
+  .seasons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; }
+  .season { text-align: center; padding: 40px 24px; border: 1px solid #eae7e2; transition: border-color 0.3s; }
+  .season.current { border-color: #8b7355; background: rgba(139,115,85,0.04); }
+  .season-icon { font-size: 32px; margin-bottom: 16px; }
+  .season h3 { font-size: 16px; font-weight: 400; margin-bottom: 4px; }
+  .season-date { font-size: 11px; letter-spacing: 2px; color: #8b7355; text-transform: uppercase; margin-bottom: 16px; }
+  .season ul { list-style: none; font-size: 13px; color: #76716d; }
+  .season li { margin-bottom: 4px; font-style: italic; }
+  .season-badge { display: inline-block; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #8b7355; border: 1px solid #8b7355; padding: 3px 10px; margin-top: 12px; }
 
-/* ===== LIVING LOVE ===== */
-.living-love-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: #8B6F47; margin: 32px auto; max-width: 600px; line-height: 1.6; position: relative; padding: 0 20px; }
-.living-love-img { margin-top: 48px; border-radius: 8px; overflow: hidden; max-width: 700px; margin-left: auto; margin-right: auto; }
-.living-love-img img { width: 100%; height: auto; }
+  /* TRANSPARENCY */
+  .transparency { text-align: center; max-width: 700px; margin: 0 auto; }
+  .transparency h2 { font-size: clamp(20px, 2.5vw, 32px); font-weight: 400; margin-bottom: 24px; letter-spacing: 1px; }
+  .transparency .amount { font-size: clamp(28px, 4vw, 48px); color: #8b7355; font-weight: 400; margin-bottom: 8px; }
+  .transparency .note { font-size: 14px; color: #76716d; font-style: italic; margin-bottom: 40px; line-height: 1.8; }
+  .fund-bars { text-align: left; max-width: 500px; margin: 0 auto; }
+  .fund-item { margin-bottom: 20px; }
+  .fund-label { display: flex; justify-content: space-between; font-size: 12px; letter-spacing: 1px; margin-bottom: 6px; }
+  .fund-bar { height: 2px; background: #eae7e2; position: relative; }
+  .fund-fill { height: 100%; background: #8b7355; }
 
-/* ===== BOOK ===== */
-.book-content { max-width: 640px; margin: 0 auto; text-align: center; }
-.book-badge { display: inline-block; padding: 6px 20px; border: 1px solid #C9A96E; border-radius: 20px; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #C9A96E; margin-bottom: 20px; }
-
-/* ===== PILLARS ===== */
-.pillars-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 48px; }
-.pillar-card { background: #fff; padding: 36px 20px; border-radius: 8px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; }
-.pillar-card:hover { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(0,0,0,0.1); }
-.pillar-icon { width: 56px; height: 56px; margin: 0 auto 16px; }
-.pillar-icon svg { width: 100%; height: 100%; stroke: #8B6F47; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.pillar-card h3 { font-size: 1rem; margin-bottom: 8px; color: #2C2C2C; }
-.pillar-card p { font-size: 0.88rem; color: #777; line-height: 1.6; }
-.pillars-note { text-align: center; margin-top: 40px; font-style: italic; color: #999; font-size: 0.9rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-
-/* ===== FOUNDATION ===== */
-.foundation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.foundation-img { border-radius: 8px; overflow: hidden; aspect-ratio: 4/3; }
-.foundation-img img { width: 100%; height: 100%; object-fit: cover; }
-.foundation-stats { display: flex; gap: 32px; margin-top: 32px; }
-.stat { text-align: center; flex: 1; }
-.stat-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: #8B6F47; display: block; }
-.stat-label { font-size: 0.8rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
-
-/* ===== SPEAKING ===== */
-.topics { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 32px; }
-.topic-tag { padding: 8px 20px; border: 1px solid #ddd; border-radius: 20px; font-size: 0.85rem; color: #666; background: #fff; transition: all 0.3s; }
-.topic-tag:hover { border-color: #8B6F47; color: #8B6F47; }
-
-/* ===== JOURNAL ===== */
-.journal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
-.journal-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; }
-.journal-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
-.journal-card-img { height: 200px; overflow: hidden; }
-.journal-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-.journal-card:hover .journal-card-img img { transform: scale(1.05); }
-.journal-card-body { padding: 24px; }
-.journal-card-date { font-size: 0.75rem; color: #aaa; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-.journal-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
-.journal-card p { font-size: 0.88rem; color: #888; }
-
-/* ===== NEWSLETTER ===== */
-.newsletter-form { display: flex; max-width: 460px; margin: 28px auto 0; gap: 0; }
-.newsletter-form input { flex: 1; padding: 14px 20px; border: 1px solid #ddd; border-right: none; border-radius: 4px 0 0 4px; font-family: 'Inter', sans-serif; font-size: 0.95rem; background: #fff; outline: none; transition: border-color 0.3s; }
-.newsletter-form input:focus { border-color: #8B6F47; }
-.newsletter-form button { padding: 14px 28px; background: #8B6F47; color: #fff; border: none; border-radius: 0 4px 4px 0; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.5px; cursor: pointer; transition: background 0.3s; }
-.newsletter-form button:hover { background: #725a38; }
-
-/* ===== FOOTER ===== */
-.footer { background: #2C2C2C; color: rgba(255,255,255,0.7); padding: 60px 0 30px; }
-.footer-grid { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 40px; margin-bottom: 40px; }
-.footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #fff; margin-bottom: 12px; }
-.footer-links { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
-.footer-links a { font-size: 0.88rem; color: rgba(255,255,255,0.6); transition: color 0.3s; }
-.footer-links a:hover { color: #C9A96E; }
-.footer-social { display: flex; gap: 16px; justify-content: flex-end; align-items: flex-start; }
-.footer-social a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-.footer-social a:hover { border-color: #C9A96E; background: rgba(201,169,110,0.1); }
-.footer-social svg { width: 16px; height: 16px; fill: rgba(255,255,255,0.6); }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; text-align: center; font-size: 0.82rem; color: rgba(255,255,255,0.4); }
-.footer-location { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 1024px) {
-  .pillars-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 768px) {
-  .navbar-links { display: none; }
-  .hamburger { display: flex; }
-  .about-grid, .foundation-grid { grid-template-columns: 1fr; gap: 32px; }
-  .about-img { aspect-ratio: 16/9; max-height: 400px; }
-  .foundation-img { aspect-ratio: 16/9; max-height: 350px; }
-  .pillars-grid { grid-template-columns: 1fr 1fr; }
-  .journal-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; text-align: center; }
-  .footer-links { justify-content: center; }
-  .footer-social { justify-content: center; }
-  .foundation-stats { flex-direction: column; gap: 16px; }
-  .newsletter-form { flex-direction: column; gap: 12px; }
-  .newsletter-form input { border-right: 1px solid #ddd; border-radius: 4px; }
-  .newsletter-form button { border-radius: 4px; }
-  .section { padding: 70px 0; }
-}
-@media (max-width: 480px) {
-  .pillars-grid { grid-template-columns: 1fr; }
-}
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .nav-inner { padding: 12px 20px; flex-direction: column; gap: 8px; }
+    .nav-links { gap: 16px; justify-content: center; }
+    .nav-sites { margin-left: 0; padding-left: 0; border-left: none; margin-top: 4px; justify-content: center; }
+    section { padding: 60px 20px; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar-divider { width: 60px; height: 1px; margin: 0 auto; }
+    .card-grid, .retreats { grid-template-columns: 1fr; }
+    .seasons { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <div class="container">
-    <a href="#" class="navbar-logo">Dr. Jasmine</a>
-    <ul class="navbar-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#living-love">Living LOVE</a></li>
-      <li><a href="#book">Book</a></li>
-      <li><a href="#foundation">Foundation</a></li>
-      <li><a href="#journal">Journal</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">The Living Love Collective</a>
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:16px;">
+      <div class="nav-links">
+        <a href="#work">Learn</a>
+        <a href="#retreats">Shop</a>
+        <a href="#transparency">Donate</a>
+        <a href="#retreats">Participate</a>
+        <a href="#retreats">Refer</a>
+      </div>
+      <div class="nav-sites">
+        <a href="https://purewellnesslove.com">PWL</a>
+        <a href="https://wellmadefoundation.org">WMF</a>
+      </div>
+    </div>
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" id="mobileClose">&times;</button>
-  <a href="#about">About</a>
-  <a href="#living-love">Living LOVE</a>
-  <a href="#book">Book</a>
-  <a href="#foundation">Foundation</a>
-  <a href="#journal">Journal</a>
-  <a href="#contact">Contact</a>
-</div>
-
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content fade-in">
-    <p class="hero-label">I come from a lineage of healing women</p>
-    <h1>Dr. Jasmine</h1>
-    <p class="hero-sub">Bringing Wellness Home</p>
-    <p class="hero-tagline">Creating spaces of high vibration where families heal, grow, and remember who they are.</p>
-  </div>
-  <div class="scroll-indicator"><span></span></div>
+  <div class="hero-flower">🌸</div>
+  <h1>Dr. Jasmine Therese Esguerra</h1>
+  <div class="hero-subtitle">The Living Love Collective</div>
+  <div class="hero-divider"></div>
+  <div class="hero-line">Clinical Somatics · Executive Leadership · Whole-Family Generational Care</div>
 </section>
 
-<!-- ABOUT -->
-<section class="section bg-cream" id="about">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-img fade-in-left">
-        <img src="images/517953063_10165720430890744_2291706329923788505_n.jpg" alt="Dr. Jasmine" loading="lazy">
+<!-- TWO PILLARS -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">Ancestral Polarity</div>
+    <div class="section-title">The Two Pillars</div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">🌸</div>
+        <h3>Sampaguita</h3>
+        <div class="pillar-subtitle">The Feminine</div>
+        <p>Heart in Front of Head. The unshakeable promise of love, grace, and soft resilience.</p>
       </div>
-      <div class="fade-in-right">
-        <p class="section-label">About</p>
-        <h2 class="section-heading">I come from a lineage of healing women</h2>
-        <p class="section-text">I'm Dr. Jasmine Therese Esguerra — a chiropractor, mother of three daughters, and a healer carrying forward the wisdom of the women who came before me. For over 23 years, I've blended modern chiropractic care with Hilot, the traditional Filipino healing art that runs in my blood.</p>
-        <p class="section-text">My greatest lessons have been learning to honor our yin and feminine gifts — to forgive, to embrace the whole family, and to love unconditionally. As Mrs. Maui Filipina 2025, I carry a vision rooted in faith, Filipino heritage, and the belief that true wellness isn't static. It's alive, relational, and cyclical.</p>
-        <p class="section-text">I founded Pure Wellness Love and The Well-Made Foundation because I believe when wellness multiplies, communities heal.</p>
-        <div style="margin-top:28px;">
-          <a href="#living-love" class="btn btn-primary">My Healing Work</a>
-        </div>
+      <div style="display:flex;align-items:stretch;">
+        <div class="pillar-divider"></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- LIVING LOVE -->
-<section class="section" id="living-love">
-  <div class="container text-center">
-    <div class="fade-in">
-      <p class="section-label">Healing Art</p>
-      <h2 class="section-heading">Living LOVE</h2>
-      <p style="font-family:'Playfair Display',serif; font-style:italic; font-size:1.1rem; color:#8B6F47; margin-bottom:24px;">Healing comes from connection to our divinity... then life flows with ease and courage.</p>
-      <p class="section-text" style="margin:0 auto;">Our spirit desires to be fully embodied while our body desires to be inspired. Living LOVE is the healing art I've developed from understanding and working with our vibrational being. It's both a practice and a way of life — standing heart-forward, open, and free.</p>
-      <p class="section-text" style="margin:16px auto 0;">In this posture of victory and ease, healing becomes natural. Families become the true hubs of wellness — not through technique or correction, but through authenticity, truth, and the power of feeling seen and loved.</p>
-      <p class="living-love-quote">"Each season has its gifts. When we live in alignment with that light, our bodies and our world begin to heal."</p>
-    </div>
-    <div class="living-love-img fade-in">
-      <img src="images/mysticbella_close_up_of_hands_over_someones_heart_light_pouri_91b5e347-da1c-4869.jpg" alt="Healing hands over heart" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- DIVINE SPARK BOOK -->
-<section class="section bg-dark" id="book">
-  <div class="container text-center">
-    <div class="book-content fade-in">
-      <p class="section-label">Forthcoming Book</p>
-      <h2 class="section-heading">Divine Spark</h2>
-      <span class="book-badge">Coming Soon</span>
-      <p class="section-text" style="margin:0 auto;">Every family carries a spark of healing. In Divine Spark, I share how love and faith can mend the fractures within our families and communities. This book draws from everything I've learned as a healer, a mother, and an advocate — a roadmap for rediscovering your divine purpose and reclaiming the light that trauma cannot extinguish.</p>
-      <p class="section-text" style="margin:16px auto 0; font-style:italic; color:rgba(255,255,255,0.6);">Readers will walk away inspired to live with courage, compassion, and renewed clarity in their calling.</p>
-      <div style="margin-top:32px;">
-        <button class="btn btn-outline" onclick="alert('Waitlist coming soon!')">Join the Waitlist</button>
+      <div class="pillar">
+        <div class="pillar-icon">🛡️</div>
+        <h3>Bayani</h3>
+        <div class="pillar-subtitle">The Masculine</div>
+        <p>The Posture of Victory. Unshakeable structural protection, active service, and a noble shield.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FIVE PILLARS -->
-<section class="section" id="pillars">
-  <div class="container">
-    <div class="text-center fade-in">
-      <p class="section-label">Philosophy</p>
-      <h2 class="section-heading">The Five Pillars of Pure Wellness</h2>
-    </div>
-    <div class="pillars-grid">
-      <div class="pillar-card fade-in">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-        <h3>Health</h3>
-        <p>Caring for the body with wisdom, simplicity, and vitality</p>
+<!-- THE WORK -->
+<section id="work">
+  <div class="section-inner">
+    <div class="section-label">Learn</div>
+    <div class="section-title">The Work</div>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Digital Somatic Video Matrices</h3>
+        <p>Clinical-grade somatic repatterning delivered through curated video architectures. Restore coherence from the inside out.</p>
       </div>
-      <div class="pillar-card fade-in">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-        <h3>Wealth</h3>
-        <p>Creating prosperity with integrity, generosity, and purpose</p>
+      <div class="card">
+        <h3>Energy-Clearing Protocols</h3>
+        <p>Precision protocols for releasing inherited energetic burdens. Generational freedom begins with one cleared field.</p>
       </div>
-      <div class="pillar-card fade-in">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <h3>Personal Development</h3>
-        <p>Growing awareness, courage, and inner leadership</p>
+      <div class="card">
+        <h3>Excerpts from "Divine Spark"</h3>
+        <p>Selected passages from the forthcoming volume — a living document of spiritual leadership and embodied wisdom.</p>
       </div>
-      <div class="pillar-card fade-in">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>Relationships</h3>
-        <p>Strengthening families, community, and connection</p>
-      </div>
-      <div class="pillar-card fade-in">
-        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
-        <h3>Spirit</h3>
-        <p>Living in alignment with love, nature, and divine rhythm</p>
-      </div>
-    </div>
-    <p class="pillars-note fade-in">Our logo carries two symbols: the Sampaguita — the Jasmine flower, national flower of the Philippines, meaning "sumpa kita," a promise of love. And the Sand Dollar — which, when broken open, releases five peace doves. Together they remind us: with the covering of these five pillars, we bloom from within. Flowers can't be forced to bloom... our approach is delicate, whole family, and honoring.</p>
-  </div>
-</section>
-
-<!-- WELL-MADE FOUNDATION -->
-<section class="section bg-cream" id="foundation">
-  <div class="container">
-    <div class="foundation-grid">
-      <div class="foundation-img fade-in-left">
-        <img src="images/mysticbella_family_joining_hands_walking_together_on_the_maui_0650bc0c-cfbc-4c2d.jpg" alt="Family walking on Maui beach" loading="lazy">
-      </div>
-      <div class="fade-in-right">
-        <p class="section-label">Our Cause</p>
-        <h2 class="section-heading">The Well-Made Foundation</h2>
-        <p class="section-text">I believe we are meant to live in harmony with nature's rhythms — honoring the seasons of expansion and rest, action and integration. The Well-Made Foundation is my commitment to restoring safety, dignity, and opportunity for families, and to helping end human trafficking through wisdom, love, and leadership.</p>
-        <p class="section-text">My vision: one million members, each contributing $20 a year, to fund education, prevention, and holistic rehabilitation. When wellness multiplies, communities heal.</p>
-        <div class="foundation-stats">
-          <div class="stat">
-            <span class="stat-num">1M+</span>
-            <span class="stat-label">Members</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">$20</span>
-            <span class="stat-label">Per Year</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">Infinite</span>
-            <span class="stat-label">Families Empowered</span>
-          </div>
-        </div>
-        <div style="margin-top:28px;">
-          <a href="#" class="btn btn-primary">Learn More</a>
-        </div>
+      <div class="card">
+        <h3>Feng Shui Architectural Consultations</h3>
+        <p>Spatial alignment for homes and executive environments. Where structure meets spirit, abundance follows.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SPEAKING -->
-<section class="section" id="speaking">
-  <div class="container text-center">
-    <div class="fade-in">
-      <p class="section-label">Engagements</p>
-      <h2 class="section-heading">Speaking &amp; Media</h2>
-      <p class="section-text" style="margin:0 auto;">I'm available for speaking engagements, workshops, and media appearances. I bring a unique blend of chiropractic expertise, Filipino cultural wisdom, and spiritual insight — rooted in 23 years of practice and a lifetime of healing.</p>
-      <div class="topics">
-        <span class="topic-tag">Family Wellness</span>
-        <span class="topic-tag">Vibrational Healing</span>
-        <span class="topic-tag">Hilot &amp; Traditional Filipino Medicine</span>
-        <span class="topic-tag">Women's Empowerment</span>
-        <span class="topic-tag">Human Trafficking Awareness</span>
-        <span class="topic-tag">Higher Vibrational Living</span>
+<!-- RETREATS -->
+<section id="retreats">
+  <div class="section-inner">
+    <div class="section-label">Participate</div>
+    <div class="section-title">Retreats &amp; Immersions</div>
+    <div class="retreats">
+      <div class="retreat">
+        <div class="retreat-tag">Winter · High-Ticket</div>
+        <h3>The Sovereign Couples Retreat</h3>
+        <p>A private, high-altitude immersion for couples ready to anchor their union in ancestral strength and mutual sovereignty.</p>
+        <a href="#" class="btn-apply">Apply</a>
       </div>
-      <div style="margin-top:32px;">
-        <a href="#contact" class="btn btn-primary">Book Dr. Jasmine</a>
+      <div class="retreat">
+        <div class="retreat-tag">Seasonal</div>
+        <h3>The Conscious Parent Retreat</h3>
+        <p>For parents who choose to raise children in presence, not pattern. Break the cycle with grace and intention.</p>
+        <a href="#" class="btn-apply">Apply</a>
+      </div>
+      <div class="retreat">
+        <div class="retreat-tag">Annual</div>
+        <h3>The Generational Whole-Family Retreat</h3>
+        <p>A rare gathering of multiple generations under one roof — honoring elders, protecting the young, strengthening the line.</p>
+        <a href="#" class="btn-apply">Apply</a>
+      </div>
+      <div class="retreat">
+        <div class="retreat-tag">Certification</div>
+        <h3>Living Love Modality Certifications</h3>
+        <p>Professional certification in the Living Love framework. For practitioners, healers, and conscious leaders called to this work.</p>
+        <a href="#" class="btn-apply">Apply</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- JOURNAL -->
-<section class="section bg-cream" id="journal">
-  <div class="container">
-    <div class="text-center fade-in">
-      <p class="section-label">Insights</p>
-      <h2 class="section-heading">From the Journal</h2>
-    </div>
-    <div class="journal-grid">
-      <div class="journal-card fade-in">
-        <div class="journal-card-img">
-          <img src="images/mysticbella_beautiful_hawaii_sunrise_over_the_sea_nikon_85mm_c4f561bf-0da9-4fe3-.jpg" alt="High vibration" loading="lazy">
-        </div>
-        <div class="journal-card-body">
-          <p class="journal-card-date">Coming Soon</p>
-          <h3>What Does It Mean to Live in High Vibration?</h3>
-          <p>Exploring the frequencies that shape our daily experience and how to raise them.</p>
-        </div>
+<!-- 4-SEASON CALENDAR -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">The Solar Gates</div>
+    <div class="section-title">4-Season Calendar</div>
+    <div class="seasons">
+      <div class="season">
+        <div class="season-icon">🌸</div>
+        <h3>Spring Equinox</h3>
+        <div class="season-date">March</div>
+        <ul><li>Family Pentathlon</li><li>Home Blessing Kit</li></ul>
       </div>
-      <div class="journal-card fade-in">
-        <div class="journal-card-img">
-          <img src="images/mysticbella_beautiful_hawaii_jasmine_flowers_just_past_sunset_421bd657-2b0a-4123.jpg" alt="Sampaguita" loading="lazy">
-        </div>
-        <div class="journal-card-body">
-          <p class="journal-card-date">Coming Soon</p>
-          <h3>The Healing Power of the Sampaguita</h3>
-          <p>How the jasmine flower connects culture, spirit, and the art of healing.</p>
-        </div>
+      <div class="season current">
+        <div class="season-icon">☀️</div>
+        <h3>Summer Solstice</h3>
+        <div class="season-date">June</div>
+        <ul><li>Blush Circles</li><li>Mabuhay Monday Awards</li></ul>
+        <div class="season-badge">Current Season</div>
       </div>
-      <div class="journal-card fade-in">
-        <div class="journal-card-img">
-          <img src="images/mysticbella_stock_photograph_for_how_emotional_healing_restor_933303ed-89c0-460b.jpg" alt="Families" loading="lazy">
-        </div>
-        <div class="journal-card-body">
-          <p class="journal-card-date">Coming Soon</p>
-          <h3>Why Families Are the True Hubs of Wellness</h3>
-          <p>The case for making the home the foundation of health and healing.</p>
-        </div>
+      <div class="season">
+        <div class="season-icon">🍁</div>
+        <h3>Fall Equinox</h3>
+        <div class="season-date">September</div>
+        <ul><li>Renaissance Showcase</li><li>Business Launch Kit</li></ul>
       </div>
-    </div>
-    <div class="text-center" style="margin-top:40px;">
-      <a href="#" class="btn btn-outline-dark">Read More</a>
+      <div class="season">
+        <div class="season-icon">❄️</div>
+        <h3>Winter Solstice</h3>
+        <div class="season-date">December</div>
+        <ul><li>Candle-Lit Labyrinth</li><li>Silent Retreat</li></ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<section class="section bg-cream" id="contact" style="background:#F5F0E8;">
-  <div class="container text-center">
-    <div class="fade-in">
-      <p class="section-label">Community</p>
-      <h2 class="section-heading">Stay Connected</h2>
-      <p class="section-text" style="margin:0 auto;">If you're longing for a softer, wiser, more connected way to live well — you're in the right place. Welcome home.</p>
-      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-        <input type="email" placeholder="Your email address" required>
-        <button type="submit">Subscribe</button>
-      </form>
+<!-- FINANCIAL TRANSPARENCY -->
+<section id="transparency">
+  <div class="section-inner">
+    <div class="section-label">Accountability</div>
+    <div class="section-title">Financial Transparency</div>
+    <div class="transparency">
+      <div class="amount">$100</div>
+      <p class="note">From every premium ticket, $100 goes directly to the Anti-Human Trafficking Shield — protecting the most vulnerable through structural, sustained action.</p>
+      <div class="fund-bars">
+        <div class="fund-item">
+          <div class="fund-label"><span>Anti-Human Trafficking Shield</span><span>Direct Allocation</span></div>
+          <div class="fund-bar"><div class="fund-fill" style="width:100%"></div></div>
+        </div>
+        <div class="fund-item">
+          <div class="fund-label"><span>Retreat Programming</span><span>Operational</span></div>
+          <div class="fund-bar"><div class="fund-fill" style="width:60%"></div></div>
+        </div>
+        <div class="fund-item">
+          <div class="fund-label"><span>Community Resources</span><span>Reinvestment</span></div>
+          <div class="fund-bar"><div class="fund-fill" style="width:40%"></div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Dr. Jasmine</div>
-        <p class="footer-location">Based in Wailea, Hawaii</p>
-      </div>
-      <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#">Pure Wellness Love</a>
-        <a href="#foundation">Well-Made Foundation</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="rgba(255,255,255,0.6)"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/></svg></a>
-        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="rgba(255,255,255,0.6)"/></svg></a>
-      </div>
+<footer style="padding: 60px 20px; background-color: #fdfbf7; border-top: 1px solid #eae7e2;">
+  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 16px; letter-spacing: 4px; text-transform: uppercase; color: #1a1918; margin-bottom: 8px; font-weight: 400;">The Living Love Collective</h2>
+    <p style="font-family: 'Times New Roman', Times, serif; font-size: 12px; font-style: italic; color: #76716d; margin-bottom: 40px;">An editorial ecosystem of pure living, whole-family generational care, and conscious leadership.</p>
+    <div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap;">
+      <a href="https://drjasmine.com" style="font-family: 'Times New Roman', Times, serif; font-size: 13px; letter-spacing: 2px; color: #1a1918; text-decoration: none;">DR JASMINE</a>
+      <a href="https://purewellnesslove.com" style="font-family: 'Times New Roman', Times, serif; font-size: 13px; letter-spacing: 2px; color: #1a1918; text-decoration: none;">PURE WELLNESS LOVE</a>
+      <a href="https://wellmadefoundation.org" style="font-family: 'Times New Roman', Times, serif; font-size: 13px; letter-spacing: 2px; color: #1a1918; text-decoration: none;">WELL MADE FOUNDATION</a>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Dr. Jasmine Therese Esguerra. All rights reserved.</p>
-    </div>
+    <div style="width: 40px; height: 1px; background: #eae7e2; margin: 0 auto 20px;"></div>
+    <p style="font-size: 11px; color: #76716d;">© 2026 The Living Love Collective. All rights reserved.</p>
   </div>
 </footer>
 
-<script>
-// Navbar scroll
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-});
-
-// Mobile menu
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileClose = document.getElementById('mobileClose');
-hamburger.addEventListener('click', () => mobileMenu.classList.add('active'));
-mobileClose.addEventListener('click', () => mobileMenu.classList.remove('active'));
-mobileMenu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => mobileMenu.classList.remove('active'));
-});
-
-// Intersection Observer for fade animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
