@@ -3,768 +3,407 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Jasmine Therese Esguerra, DC | The Living Love Collective</title>
+<title>Dr. Jasmine — The Root & Authority</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
-
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--ivory:#fdfbf7;--charcoal:#1a1a1a;--gold:#c9a96e;--cream:#f5f0e8;--gold-light:#e8d5a8}
 html{scroll-behavior:smooth}
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:var(--ivory);color:var(--charcoal);font-weight:300;line-height:1.7;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:'Playfair Display',Georgia,serif;font-weight:400}
 
-:root{
-  --ivory:#fdfbf7;
-  --charcoal:#1a1a1a;
-  --gold:#c9a96e;
-  --gold-light:#d4bc8a;
-  --cream:#f5f0e8;
-  --warm-gray:#4a4643;
-  --light-gray:#76716d;
-  --border:#eae7e2;
-  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
-  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-}
+/* Tracker */
+.tracker-bar{background:var(--charcoal);color:var(--gold);text-align:center;padding:10px 20px;font-size:11px;letter-spacing:3px;font-weight:400;font-family:'Playfair Display',serif}
 
-body{
-  font-family:var(--sans);
-  background:var(--ivory);
-  color:var(--charcoal);
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-}
-::selection{background:var(--charcoal);color:var(--ivory)}
+/* Nav */
+nav{position:fixed;top:36px;left:0;right:0;z-index:100;padding:18px 60px;display:flex;justify-content:space-between;align-items:center;transition:background .4s}
+nav.scrolled{background:rgba(253,251,247,.95);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(201,169,110,.15)}
+nav .logo{font-family:'Playfair Display',serif;font-size:18px;letter-spacing:4px;color:var(--charcoal);text-decoration:none;text-transform:uppercase}
+nav .nav-links{display:flex;gap:40px;list-style:none}
+nav .nav-links a{color:var(--charcoal);text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:400;position:relative;padding-bottom:2px}
+nav .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+nav .nav-links a:hover::after{width:100%}
 
-/* ── REVEAL ── */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+/* Hero */
+.hero{height:100vh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.hero-img{position:absolute;inset:0;background:url('images/hero-option2.jpg') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,26,26,.1) 0%,rgba(26,26,26,.6) 70%,rgba(26,26,26,.85) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 80px 100px;max-width:900px}
+.hero-content h1{font-size:clamp(48px,7vw,96px);color:#fff;font-weight:300;line-height:1.05;letter-spacing:-1px;margin-bottom:24px}
+.hero-content h1 em{font-style:italic;color:var(--gold-light)}
+.hero-content p{color:rgba(255,255,255,.75);font-size:15px;letter-spacing:2px;text-transform:uppercase;max-width:500px;line-height:1.8}
+.hero-scroll{position:absolute;bottom:40px;right:80px;z-index:2;color:var(--gold);font-size:11px;letter-spacing:3px;writing-mode:vertical-rl;text-transform:uppercase}
+
+/* Reveal animations */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}
-.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.35s}
-.reveal-d5{transition-delay:.4s}.reveal-d6{transition-delay:.45s}
+.reveal-left{opacity:0;transform:translateX(-60px);transition:opacity .8s ease,transform .8s ease}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(60px);transition:opacity .8s ease,transform .8s ease}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
 
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  background:rgba(253,251,247,.88);
-  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-  border-bottom:1px solid rgba(234,231,226,.6);
-  transition:transform .3s ease;
-}
-.nav-inner{
-  max-width:1400px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 48px;
-}
-.nav-logo{
-  font-family:var(--serif);font-size:13px;letter-spacing:4px;
-  text-transform:uppercase;color:var(--charcoal);text-decoration:none;
-  transition:letter-spacing .4s;
-}
-.nav-logo:hover{letter-spacing:6px}
-.nav-links{display:flex;gap:40px;list-style:none}
-.nav-links a{
-  font-family:var(--serif);font-size:11px;letter-spacing:2.5px;
-  text-transform:uppercase;color:var(--warm-gray);text-decoration:none;
-  position:relative;transition:color .3s;
-}
-.nav-links a::after{
-  content:'';position:absolute;bottom:-6px;left:0;width:0;height:1px;
-  background:var(--gold);transition:width .3s;
-}
-.nav-links a:hover{color:var(--charcoal)}
-.nav-links a:hover::after{width:100%}
+/* Section helpers */
+.section-pad{padding:140px 80px}
+.gold-line{width:60px;height:1px;background:var(--gold);margin:20px 0}
+.gold-divider{text-align:center;padding:60px 0}
+.gold-divider::before{content:'✦';color:var(--gold);font-size:18px;letter-spacing:20px}
 
-@media(max-width:768px){
-  .nav-inner{padding:14px 24px}
-  .nav-links{gap:24px}
-  .nav-links a{font-size:10px;letter-spacing:2px}
-  .nav-logo{font-size:11px;letter-spacing:3px}
-}
+/* Practice Section - Asymmetric */
+.practice{padding:160px 80px;position:relative}
+.practice-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:100px;align-items:start}
+.practice-label{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.practice h2{font-size:clamp(36px,4.5vw,64px);line-height:1.15;font-weight:300;margin-bottom:40px}
+.practice-text p{font-size:16px;line-height:1.9;margin-bottom:24px;color:#444}
+.practice-img{position:relative}
+.practice-img img{width:100%;height:600px;object-fit:cover;display:block}
+.practice-img::after{content:'';position:absolute;top:-20px;right:-20px;width:100%;height:100%;border:1px solid var(--gold);pointer-events:none}
 
-/* ── HERO ── */
-.hero{
-  min-height:100vh;display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:0 48px;position:relative;overflow:hidden;
-}
-.hero-bg{
-  position:absolute;top:-80px;left:0;width:100%;height:calc(100% + 160px);
-  background:url('images/mrs-maui-crown.jpg') center/cover no-repeat;
-  will-change:transform;z-index:0;
-}
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(26,26,26,.6) 0%,rgba(26,26,26,.4) 40%,rgba(26,26,26,.75) 100%);
-  z-index:1;
-}
-.hero-content{position:relative;z-index:2;max-width:900px}
-.hero-eyebrow{
-  font-family:var(--serif);font-size:11px;letter-spacing:6px;
-  text-transform:uppercase;color:rgba(253,251,247,.5);margin-bottom:40px;
-}
-.hero h1{
-  font-family:var(--serif);
-  font-size:clamp(48px,8vw,100px);
-  font-weight:400;line-height:1.05;letter-spacing:-2px;
-  color:var(--ivory);margin-bottom:20px;
-}
-.hero-tagline{
-  font-family:var(--serif);font-size:clamp(16px,2vw,22px);
-  font-weight:400;font-style:italic;color:rgba(253,251,247,.7);margin-bottom:48px;
-}
-.hero-divider{
-  width:80px;height:1px;border:none;margin:0 auto 48px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  animation:goldPulse 4s ease-in-out infinite;
-}
-@keyframes goldPulse{
-  0%,100%{width:80px;opacity:.6}50%{width:140px;opacity:1}
-}
-.hero-subtitle{
-  font-family:var(--serif);font-size:18px;font-style:italic;
-  color:rgba(253,251,247,.75);line-height:1.9;max-width:640px;margin:0 auto;
-}
-.hero-scroll{
-  position:absolute;bottom:48px;left:50%;transform:translateX(-50%);
-  z-index:2;opacity:.4;animation:bounce 2.5s ease-in-out infinite;
-}
-.hero-scroll svg{width:20px;height:20px;stroke:var(--ivory)}
-@keyframes bounce{
-  0%,100%{transform:translateX(-50%) translateY(0)}
-  50%{transform:translateX(-50%) translateY(10px)}
-}
+/* Living Love Section - Dark */
+.living-love{background:var(--charcoal);color:#fff;padding:160px 80px;position:relative;overflow:hidden}
+.living-love::before{content:'LIVING LOVE';position:absolute;top:-40px;right:-20px;font-size:clamp(100px,15vw,250px);font-family:'Playfair Display',serif;color:rgba(201,169,110,.04);font-weight:700;letter-spacing:-5px;pointer-events:none}
+.living-love h2{font-size:clamp(40px,5vw,72px);font-weight:300;color:#fff;margin-bottom:20px}
+.living-love .gold-line{margin:30px 0 50px}
+.offering{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:80px}
+.offering-card{border:1px solid rgba(201,169,110,.25);padding:60px 50px;position:relative;transition:border-color .3s}
+.offering-card:hover{border-color:var(--gold)}
+.offering-card .tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.offering-card h3{font-size:32px;font-weight:400;margin-bottom:16px;line-height:1.3}
+.offering-card .price{font-family:'Playfair Display',serif;font-size:48px;color:var(--gold);margin:24px 0;font-weight:300}
+.offering-card p{color:rgba(255,255,255,.65);font-size:14px;line-height:1.8;margin-bottom:32px}
+.btn-gold{display:inline-block;padding:14px 40px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;transition:all .3s}
+.btn-gold:hover{background:var(--gold);color:var(--charcoal)}
 
-/* ── SECTION BASE ── */
-section{padding:140px 48px}
-.section-inner{max-width:1200px;margin:0 auto}
-.section-label{
-  font-family:var(--serif);font-size:10px;letter-spacing:5px;
-  text-transform:uppercase;color:var(--gold);margin-bottom:28px;
-}
-.section-title{
-  font-family:var(--serif);
-  font-size:clamp(36px,5vw,64px);
-  font-weight:400;line-height:1.1;color:var(--charcoal);margin-bottom:28px;
-}
-.section-rule{
-  width:48px;height:1px;background:var(--gold);margin-bottom:48px;border:none;
-}
-.section-body{
-  font-family:var(--sans);font-size:16px;color:var(--warm-gray);
-  line-height:1.9;max-width:640px;
-}
+/* Summits */
+.summits{padding:160px 80px;position:relative}
+.summits-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:80px;align-items:center}
+.summits h2{font-size:clamp(36px,4.5vw,60px);font-weight:300;line-height:1.15;margin-bottom:30px}
+.summits p{font-size:15px;line-height:1.9;color:#555;margin-bottom:20px}
+.summit-img{position:relative}
+.summit-img img{width:100%;height:500px;object-fit:cover}
 
-/* ── SPLIT SECTIONS ── */
-.split{
-  display:grid;grid-template-columns:1fr 1fr;min-height:560px;overflow:hidden;
-}
-.split-image{
-  background-size:cover;background-position:center;position:relative;
-  min-height:400px;
-}
-.split-content{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:80px 64px;
-}
-.split-content .section-title{
-  font-size:clamp(28px,3.5vw,48px);
-}
+/* Speaking */
+.speaking{background:var(--cream);padding:160px 80px}
+.speaking-inner{max-width:900px;margin:0 auto;text-align:center}
+.speaking h2{font-size:clamp(36px,4vw,56px);font-weight:300;margin-bottom:20px}
+.speaking p{font-size:16px;line-height:1.8;color:#555;margin-bottom:40px}
 
-@media(max-width:900px){
-  .split{grid-template-columns:1fr}
-  .split-image{min-height:320px}
-  .split-content{padding:60px 32px}
-}
+/* Divine Spark */
+.divine-spark{padding:160px 80px;position:relative;overflow:hidden}
+.divine-spark-inner{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.divine-spark h2{font-size:clamp(36px,4.5vw,60px);font-weight:300;line-height:1.15}
+.ds-img{position:relative}
+.ds-img img{width:100%;height:550px;object-fit:cover}
 
-/* ── FULL-WIDTH IMAGE BREAK ── */
-.image-break{
-  position:relative;width:100%;height:50vh;min-height:360px;
-  max-height:560px;overflow:hidden;
-}
-.image-break-bg{
-  position:absolute;inset:-40px;
-  background-size:cover;background-position:center;
-  will-change:transform;
-}
-.image-break-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(26,26,26,.15),rgba(26,26,26,.5));
-}
-.image-break-text{
-  position:absolute;bottom:0;left:0;right:0;padding:48px 64px;
-  font-family:var(--serif);font-size:clamp(14px,1.5vw,18px);
-  font-style:italic;color:rgba(253,251,247,.8);
-  background:linear-gradient(transparent,rgba(26,26,26,.4));
-}
+/* Cultural Roots */
+.cultural{background:var(--charcoal);color:#fff;padding:160px 80px;position:relative}
+.cultural h2{font-size:clamp(36px,4vw,52px);font-weight:300;text-align:center;margin-bottom:60px}
+.roots-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.root{text-align:center;padding:60px 40px;border:1px solid rgba(201,169,110,.2)}
+.root .emoji{font-size:48px;margin-bottom:24px}
+.root h3{font-size:28px;font-weight:400;margin-bottom:8px;color:var(--gold)}
+.root .subtitle{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(201,169,110,.6);margin-bottom:20px}
+.root p{color:rgba(255,255,255,.6);font-size:14px;line-height:1.8}
 
-@media(max-width:768px){
-  .image-break{height:40vh;min-height:280px}
-  .image-break-text{padding:32px}
-}
+/* Solar Calendar */
+.calendar{padding:160px 80px;text-align:center}
+.calendar h2{font-size:clamp(36px,4vw,52px);font-weight:300;margin-bottom:60px}
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.season{padding:40px 20px;border:1px solid var(--cream);transition:border-color .3s}
+.season:hover{border-color:var(--gold)}
+.season .emoji{font-size:36px;margin-bottom:16px}
+.season h4{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:12px;font-weight:400}
+.season p{font-size:13px;color:#777;line-height:1.7}
 
-/* ── GOLD DIVIDER ── */
-.gold-divider{
-  width:100%;height:1px;border:none;
-  background:linear-gradient(90deg,transparent 5%,var(--gold) 50%,transparent 95%);
-  opacity:.4;margin:0;
-}
+/* Ecosystem */
+.ecosystem{background:var(--cream);padding:140px 80px;text-align:center}
+.ecosystem h2{font-size:clamp(32px,4vw,48px);font-weight:300;margin-bottom:16px}
+.eco-links{display:flex;justify-content:center;gap:60px;margin-top:60px;flex-wrap:wrap}
+.eco-card{text-decoration:none;color:var(--charcoal);padding:40px;border:1px solid transparent;transition:all .3s;max-width:280px}
+.eco-card:hover{border-color:var(--gold)}
+.eco-card h4{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:4px}
+.eco-card .eco-role{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.eco-card p{font-size:13px;color:#777;line-height:1.7}
 
-/* ── QUOTE CALLOUT ── */
-.callout{
-  background:var(--cream);text-align:center;padding:120px 48px;
-}
-.callout-number{
-  font-family:var(--serif);font-size:clamp(64px,10vw,120px);
-  font-weight:400;color:var(--gold);line-height:1;margin-bottom:24px;
-}
-.callout-text{
-  font-family:var(--serif);font-size:clamp(18px,2.5vw,28px);
-  font-style:italic;color:var(--charcoal);max-width:700px;
-  margin:0 auto;line-height:1.6;
-}
+/* Shield note */
+.shield-note{text-align:center;padding:60px 80px;background:var(--charcoal);color:var(--gold);font-size:13px;letter-spacing:1.5px;line-height:1.8}
 
-/* ── CARDS ── */
-.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:80px}
-.card{
-  padding:56px 48px;border:1px solid var(--border);
-  transition:all .5s cubic-bezier(.22,1,.36,1);
-  position:relative;overflow:hidden;
-}
-.card::after{
-  content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
-  background:var(--gold);transition:width .4s ease;
-}
-.card:hover{
-  border-color:var(--gold);transform:translateY(-6px);
-  box-shadow:0 20px 60px rgba(0,0,0,.06);
-}
-.card:hover::after{width:100%}
-.card-label{
-  font-family:var(--serif);font-size:10px;letter-spacing:3px;
-  text-transform:uppercase;color:var(--gold);margin-bottom:20px;
-}
-.card-title{
-  font-family:var(--serif);font-size:26px;font-weight:400;
-  color:var(--charcoal);margin-bottom:8px;
-}
-.card-price{
-  font-family:var(--serif);font-size:16px;color:var(--gold);
-  letter-spacing:1px;margin-bottom:20px;
-}
-.card-body{
-  font-size:15px;color:var(--warm-gray);line-height:1.8;
-}
+/* Footer */
+footer{background:var(--charcoal);color:#fff;padding:100px 80px 60px;border-top:1px solid rgba(201,169,110,.15)}
+.footer-title{font-family:'Playfair Display',serif;font-size:14px;letter-spacing:6px;text-align:center;margin-bottom:16px;color:var(--gold)}
+.footer-subtitle{text-align:center;color:rgba(255,255,255,.45);font-size:13px;letter-spacing:1px;margin-bottom:60px;max-width:600px;margin-left:auto;margin-right:auto}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:60px;margin-bottom:60px}
+.footer-col h4{font-family:'Playfair Display',serif;font-size:16px;margin-bottom:4px}
+.footer-col .col-role{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{color:rgba(255,255,255,.5);text-decoration:none;font-size:13px;transition:color .3s}
+.footer-col ul li a:hover{color:var(--gold)}
+.footer-copy{text-align:center;color:rgba(255,255,255,.3);font-size:12px;letter-spacing:.5px;padding-top:40px;border-top:1px solid rgba(255,255,255,.08)}
 
-@media(max-width:768px){
-  .card-grid{grid-template-columns:1fr;gap:32px}
-  .card{padding:40px 32px}
+/* Mobile */
+@media(max-width:1024px){
+  .section-pad,.practice,.living-love,.summits,.speaking,.divine-spark,.cultural,.calendar,.ecosystem{padding:100px 40px}
+  .practice-inner,.summits-inner,.divine-spark-inner,.offering{grid-template-columns:1fr;gap:60px}
+  .roots-grid{grid-template-columns:1fr;gap:40px}
+  .seasons{grid-template-columns:1fr 1fr}
+  nav{padding:14px 30px}
+  nav .nav-links{gap:24px}
+  .hero-content{padding:0 40px 80px}
+  footer{padding:80px 40px 40px}
+  .footer-grid{grid-template-columns:1fr;gap:40px;text-align:center}
 }
-
-/* ── OFFERINGS LIST ── */
-.offering-list{margin-top:80px;border-top:1px solid var(--border)}
-.offering{
-  padding:36px 0;border-bottom:1px solid var(--border);
-  display:flex;align-items:baseline;gap:24px;
-  transition:padding-left .4s,background .4s;cursor:default;
+@media(max-width:640px){
+  .section-pad,.practice,.living-love,.summits,.speaking,.divine-spark,.cultural,.calendar,.ecosystem{padding:80px 24px}
+  nav .nav-links{display:none}
+  .hero-content{padding:0 24px 60px}
+  .seasons{grid-template-columns:1fr 1fr;gap:20px}
+  .offering{grid-template-columns:1fr}
+  .eco-links{flex-direction:column;align-items:center}
+  footer{padding:60px 24px 30px}
+  .shield-note{padding:40px 24px}
 }
-.offering:hover{padding-left:20px;background:rgba(234,231,226,.15)}
-.offering-num{
-  font-family:var(--serif);font-size:32px;color:var(--border);
-  letter-spacing:1px;flex-shrink:0;font-weight:400;line-height:1;
-  transition:color .3s;
-}
-.offering:hover .offering-num{color:var(--gold)}
-.offering-name{
-  font-family:var(--serif);font-size:20px;font-weight:400;
-  color:var(--charcoal);margin-bottom:4px;
-}
-.offering-desc{font-size:14px;color:var(--light-gray);line-height:1.7}
-
-/* ── ECOSYSTEM GRID ── */
-.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:80px;border-top:1px solid var(--border)}
-.eco-card{
-  padding:48px 40px;border-bottom:1px solid var(--border);
-  border-right:1px solid var(--border);
-  transition:all .4s ease;
-}
-.eco-card:nth-child(3n){border-right:none}
-.eco-card:hover{background:rgba(234,231,226,.2);transform:translateY(-3px)}
-.eco-card.active{background:rgba(201,169,110,.04);border-color:var(--gold)}
-.eco-label{
-  font-family:var(--serif);font-size:10px;letter-spacing:3px;
-  text-transform:uppercase;color:var(--gold);margin-bottom:16px;
-}
-.eco-name{
-  font-family:var(--serif);font-size:20px;font-weight:400;
-  color:var(--charcoal);margin-bottom:12px;
-}
-.eco-body{font-size:13px;color:var(--light-gray);line-height:1.7}
-.eco-link{
-  display:inline-block;margin-top:16px;
-  font-family:var(--serif);font-size:11px;letter-spacing:1.5px;
-  color:var(--gold);text-decoration:none;
-  border-bottom:1px solid transparent;transition:border-color .3s;
-}
-.eco-link:hover{border-color:var(--gold)}
-
-@media(max-width:768px){
-  .eco-grid{grid-template-columns:1fr}
-  .eco-card{border-right:none}
-}
-
-/* ── PILLARS ── */
-.pillars{display:grid;grid-template-columns:1fr 1fr;gap:100px;margin-top:100px}
-.pillar{text-align:center}
-.pillar-letter{
-  font-family:var(--serif);font-size:140px;color:var(--border);
-  line-height:1;margin-bottom:20px;transition:color .6s;
-}
-.pillar:hover .pillar-letter{color:var(--gold)}
-.pillar-name{
-  font-family:var(--serif);font-size:28px;font-weight:400;
-  color:var(--charcoal);margin-bottom:8px;
-}
-.pillar-sub{
-  font-family:var(--serif);font-size:14px;font-style:italic;
-  color:var(--light-gray);margin-bottom:28px;
-}
-.pillar-body{font-size:15px;color:var(--warm-gray);line-height:1.8}
-
-@media(max-width:768px){.pillars{grid-template-columns:1fr;gap:60px}}
-
-/* ── SEASONS ── */
-.seasons{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:80px;border-top:1px solid var(--border)}
-.season{
-  padding:48px 40px;border-bottom:1px solid var(--border);
-  border-right:1px solid var(--border);
-  transition:all .4s;
-}
-.season:nth-child(2n){border-right:none}
-.season:hover{background:rgba(201,169,110,.04)}
-.season-name{
-  font-family:var(--serif);font-size:24px;font-weight:400;
-  color:var(--charcoal);margin-bottom:10px;
-}
-.season-quote{
-  font-family:var(--serif);font-size:14px;font-style:italic;
-  color:var(--light-gray);margin-bottom:16px;line-height:1.7;
-}
-.season-body{font-size:14px;color:var(--warm-gray);line-height:1.8}
-.season-flagship{margin-top:10px;font-size:13px;color:var(--light-gray);font-style:italic}
-
-@media(max-width:768px){
-  .seasons{grid-template-columns:1fr}
-  .season{border-right:none}
-}
-
-/* ── DARK SECTION ── */
-.dark{background:var(--charcoal);color:var(--ivory)}
-.dark .section-label{color:var(--light-gray)}
-.dark .section-title{color:var(--ivory)}
-.dark .section-body{color:#a39e99}
-.dark .section-rule{background:var(--gold)}
-
-/* ── CTA BUTTONS ── */
-.cta{
-  display:inline-block;font-family:var(--serif);font-size:12px;
-  letter-spacing:3px;text-transform:uppercase;padding:18px 48px;
-  text-decoration:none;transition:all .4s;cursor:pointer;border:none;
-}
-.cta-dark{background:var(--charcoal);color:var(--ivory)}
-.cta-dark:hover{background:#3d3a38;letter-spacing:4px}
-.cta-outline{
-  background:transparent;color:var(--charcoal);border:1px solid var(--charcoal);
-}
-.cta-outline:hover{
-  background:var(--charcoal);color:var(--ivory);letter-spacing:4px;
-}
-.cta-gold{background:var(--gold);color:var(--ivory)}
-.cta-gold:hover{background:var(--gold-light);letter-spacing:4px}
-.cta-group{margin-top:48px;display:flex;gap:20px;flex-wrap:wrap}
-
-/* ── CONTACT ── */
-.contact{text-align:center}
-.contact-body{
-  font-size:16px;color:var(--warm-gray);max-width:560px;
-  margin:0 auto;line-height:1.9;
-}
-.contact-email{
-  display:inline-block;margin-top:36px;
-  font-family:var(--serif);font-size:20px;color:var(--charcoal);
-  text-decoration:none;border-bottom:1px solid var(--gold);
-  padding-bottom:3px;transition:all .3s;
-}
-.contact-email:hover{border-color:var(--charcoal);letter-spacing:1px}
-
-/* ── FOOTER ── */
-footer{
-  padding:80px 48px;background:var(--ivory);
-  border-top:1px solid var(--border);
-}
-.footer-inner{max-width:1200px;margin:0 auto;text-align:center}
-.footer-title{
-  font-family:var(--serif);font-size:16px;letter-spacing:5px;
-  text-transform:uppercase;color:var(--charcoal);margin-bottom:8px;font-weight:400;
-}
-.footer-sub{
-  font-family:var(--serif);font-size:12px;font-style:italic;
-  color:var(--light-gray);margin-bottom:48px;
-}
-.footer-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:48px;text-align:left;margin-bottom:48px;
-  padding-bottom:48px;border-bottom:1px solid var(--border);
-}
-.footer-col-title{
-  font-family:var(--serif);font-size:11px;letter-spacing:2.5px;
-  text-transform:uppercase;color:#3d3a38;margin-bottom:14px;
-}
-.footer-col-desc{font-size:11px;color:var(--light-gray);line-height:1.6;margin-bottom:14px}
-.footer-col ul{list-style:none;padding:0;font-size:12px;line-height:2.2}
-.footer-col a{color:var(--warm-gray);text-decoration:none;transition:color .3s}
-.footer-col a:hover{color:var(--charcoal)}
-.footer-copy{font-size:11px;color:#a39e99;letter-spacing:1px}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">Dr. Jasmine</a>
-    <ul class="nav-links">
-      <li><a href="#practice">Learn</a></li>
-      <li><a href="#offerings">Shop</a></li>
-      <li><a href="#collective">Participate</a></li>
-      <li><a href="#contact">Refer</a></li>
-    </ul>
-  </div>
+<!-- Tracker -->
+<div class="tracker-bar">THE LIVING LOVE COLLECTIVE &nbsp;·&nbsp; 142,305 / 1,000,000 FAMILIES ANCHORED IN POWER & PROTECTION</div>
+
+<!-- Nav -->
+<nav id="mainNav">
+  <a href="#" class="logo">Dr. Jasmine</a>
+  <ul class="nav-links">
+    <li><a href="#practice">Learn</a></li>
+    <li><a href="https://jack108510.github.io/pure-wellness-joy/">Shop</a></li>
+    <li><a href="#living-love">Participate</a></li>
+    <li><a href="#ecosystem">Refer</a></li>
+  </ul>
 </nav>
 
-<!-- HERO -->
+<!-- Hero -->
 <section class="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-img"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">The Living Love Collective</p>
-    <h1>Dr. Jasmine<br>Therese Esguerra</h1>
-    <p class="hero-tagline">Doctor of Chiropractic &mdash; Mrs. Maui</p>
-    <hr class="hero-divider">
-    <p class="hero-subtitle">Optimizing the human biological experience through clinical mastery, somatic intelligence, and the Living Love Modality.</p>
+    <h1>Dr. Jasmine<br><em>Therese</em></h1>
+    <p>Clinical Somatics Practitioner &middot; Divine Leadership Architect &middot; Founding Steward of The Living Love Collective</p>
   </div>
-  <div class="hero-scroll">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-  </div>
+  <span class="hero-scroll">Scroll</span>
 </section>
 
-<!-- SPLIT: ART PRINT + INTRO -->
-<div class="split reveal">
-  <div class="split-image" style="background-image:url('images/art-print.png')"></div>
-  <div class="split-content" style="background:var(--cream)">
-    <p class="section-label">The Foundation</p>
-    <h2 class="section-title">The Practice</h2>
-    <hr class="section-rule">
-    <p class="section-body"><strong>Clinical Somatics.</strong> The body as a living system, not a machine. A practice built on the understanding that structure governs function, and that the human body carries its own intelligence when properly supported.</p>
-    <p class="section-body" style="margin-top:24px"><strong>The Living Love Modality.</strong> Her signature framework. A system of somatic intelligence, clinical mastery, and conscious transformation.</p>
-  </div>
-</div>
-
-<!-- QUOTE CALLOUT -->
-<div class="callout reveal">
-  <div class="callout-number">$10K</div>
-  <p class="callout-text">The Living Love Program &mdash; an immersive journey through body, mind, and spirit in unified transformation</p>
-</div>
-
-<!-- PROGRAMS AS CARDS -->
-<section id="practice">
-  <div class="section-inner">
-    <p class="section-label reveal">The Pathway</p>
-    <h2 class="section-title reveal">Two Tiers of Transformation</h2>
-    <hr class="section-rule reveal">
-
-    <div class="card-grid">
-      <div class="card reveal reveal-d1">
-        <p class="card-label">Tier I</p>
-        <h3 class="card-title">Living Love Program</h3>
-        <p class="card-price">$10,000</p>
-        <p class="card-body">An immersive personal journey. Deep guided work with Dr. Jasmine through the Living Love Modality &mdash; body, mind, and spirit in unified transformation.</p>
-      </div>
-      <div class="card reveal reveal-d2">
-        <p class="card-label">Tier II</p>
-        <h3 class="card-title">Living Love Modality Certification</h3>
-        <p class="card-price">$25,000</p>
-        <p class="card-body">For practitioners. A comprehensive certification pathway. Graduates become certified facilitators, authorized to guide others through the framework.</p>
+<!-- The Practice -->
+<section class="practice" id="practice">
+  <div class="practice-inner">
+    <div class="reveal-left">
+      <div class="practice-label">The Practice</div>
+      <h2>Clinical Somatics<br>& the Architecture<br>of Healing</h2>
+      <div class="gold-line"></div>
+      <div class="practice-text">
+        <p>Dr. Jasmine Therese Esguerra holds space at the intersection of clinical precision and sacred care. As a Clinical Somatics Practitioner, she works with the body's own intelligence — not to fix, but to remember.</p>
+        <p>Through the Living Love Modality, she has developed a framework that honors lineage, restores somatic sovereignty, and anchors families in generational power and protection.</p>
       </div>
     </div>
-
-    <p class="section-body reveal" style="margin-top:60px;padding-top:40px;border-top:1px solid var(--border);font-style:italic;color:var(--light-gray)">
-      $100 from every premium ticket goes to the Anti-Human Trafficking Shield via the WellMade Foundation.
-    </p>
-    <div class="cta-group reveal">
-      <a href="mailto:contact@drjasmine.com?subject=Living%20Love%20Program%20Application" class="cta cta-dark">Apply for Living Love Program</a>
-      <a href="mailto:contact@drjasmine.com?subject=Certification%20Application" class="cta cta-outline">Apply for Certification</a>
+    <div class="practice-img reveal-right">
+      <img src="images/mysticbella_close_up_of_hands_over_someones_heart_light_pouri_91b5e347-da1c-4869.jpg" alt="Somatic healing practice">
     </div>
   </div>
 </section>
 
-<!-- IMAGE BREAK: MAUI MOUNTAINS -->
-<div class="image-break reveal">
-  <div class="image-break-bg" style="background-image:url('images/maui-mountains.jpg')"></div>
-  <div class="image-break-overlay"></div>
-  <div class="image-break-text">Divine Leadership retreats on Maui and at selected sanctuaries worldwide</div>
-</div>
+<div class="gold-divider"></div>
 
-<!-- OFFERINGS -->
-<section id="offerings">
-  <div class="section-inner">
-    <p class="section-label reveal">What She Offers</p>
-    <h2 class="section-title reveal">Offerings</h2>
-    <hr class="section-rule reveal">
-
-    <div class="offering-list">
-      <div class="offering reveal reveal-d1">
-        <span class="offering-num">01</span>
-        <div>
-          <div class="offering-name">Divine Leadership Summits &amp; Retreats</div>
-          <p class="offering-desc">Intimate, premium containers for transformation. Designed for leaders and healers ready to operate at the highest level.</p>
-        </div>
-      </div>
-      <div class="offering reveal reveal-d2">
-        <span class="offering-num">02</span>
-        <div>
-          <div class="offering-name">Speaking &amp; Media</div>
-          <p class="offering-desc">Keynotes, panels, podcasts. Dr. Jasmine speaks on clinical somatics, conscious leadership, and the Living Love Modality.</p>
-        </div>
-      </div>
-      <div class="offering reveal reveal-d3">
-        <span class="offering-num">03</span>
-        <div>
-          <div class="offering-name">Clinical Somatics</div>
-          <p class="offering-desc">Her foundation. The body as a living system &mdash; structural, neurological, and energetic integration.</p>
-        </div>
-      </div>
-      <div class="offering reveal reveal-d4">
-        <span class="offering-num">04</span>
-        <div>
-          <div class="offering-name">Living Love Program</div>
-          <p class="offering-desc">$10,000 &mdash; Immersive personal journey with Dr. Jasmine</p>
-        </div>
-      </div>
-      <div class="offering reveal reveal-d5">
-        <span class="offering-num">05</span>
-        <div>
-          <div class="offering-name">Living Love Modality Certification</div>
-          <p class="offering-desc">$25,000 &mdash; For practitioners. Graduates become certified facilitators.</p>
-        </div>
-      </div>
-      <div class="offering reveal reveal-d6">
-        <span class="offering-num">06</span>
-        <div>
-          <div class="offering-name">Divine Spark Platform</div>
-          <p class="offering-desc">Digital repository for somatic video matrices, energy-clearing protocols, and literary excerpts. The knowledge base of the Living Love Modality.</p>
-        </div>
-      </div>
+<!-- Living Love Modality -->
+<section class="living-love" id="living-love">
+  <div class="reveal">
+    <div class="practice-label" style="color:var(--gold)">The Modality</div>
+    <h2>Living Love</h2>
+    <div class="gold-line"></div>
+    <p style="color:rgba(255,255,255,.55);font-size:15px;max-width:600px;line-height:1.8">A transformative framework for those called to the deepest work — personal, lineage-level, and architectural. Two pathways. One devotion.</p>
+  </div>
+  <div class="offering">
+    <div class="offering-card reveal">
+      <div class="tag">Personal Transformation</div>
+      <h3>The Living Love<br>Program</h3>
+      <div class="price">$10,000</div>
+      <p>A comprehensive journey through somatic reclamation, lineage healing, and divine leadership architecture. For those ready to anchor their family's generational story in power.</p>
+      <a href="#" class="btn-gold">Apply Now</a>
+    </div>
+    <div class="offering-card reveal">
+      <div class="tag">Professional Certification</div>
+      <h3>Living Love Modality<br>Certification</h3>
+      <div class="price">$25,000</div>
+      <p>For practitioners called to carry this work forward. Full certification in the Living Love Modality — clinical frameworks, somatic protocols, and sacred practice architecture.</p>
+      <a href="#" class="btn-gold">Apply Now</a>
     </div>
   </div>
 </section>
 
-<!-- SPLIT: BLUE LACE DRESS -->
-<div class="split reveal" style="direction:rtl">
-  <div class="split-content" style="background:var(--ivory);direction:ltr">
-    <p class="section-label">The Ecosystem</p>
-    <h2 class="section-title">The Living Love Collective</h2>
-    <hr class="section-rule">
-    <p class="section-body">Dr. Jasmine is the founder of the Living Love Collective &mdash; a three-engine editorial ecosystem devoted to pure living, whole-family generational care, and conscious leadership.</p>
-  </div>
-  <div class="split-image" style="background-image:url('images/blue-lace-dress.jpg');background-position:top center;direction:ltr"></div>
-</div>
-
-<!-- ECOSYSTEM GRID -->
-<section id="collective">
-  <div class="section-inner">
-    <div class="eco-grid">
-      <div class="eco-card active reveal reveal-d1">
-        <p class="eco-label">Engine I &mdash; The Root</p>
-        <h3 class="eco-name">Dr. Jasmine</h3>
-        <p class="eco-body">Clinical somatics, the Living Love Modality, and personal authority. The source from which the ecosystem grows.</p>
-      </div>
-      <div class="eco-card reveal reveal-d2">
-        <p class="eco-label">Engine II &mdash; The Branches</p>
-        <h3 class="eco-name">Pure Wellness Love</h3>
-        <p class="eco-body">Commerce and sanctuary elements. The lifestyle store, milestone and ritual kits, and the Bloom Circle Registry.</p>
-        <a href="https://jack108510.github.io/pure-wellness-joy/" class="eco-link">Visit Pure Wellness Love →</a>
-      </div>
-      <div class="eco-card reveal reveal-d3">
-        <p class="eco-label">Engine III &mdash; The Soil</p>
-        <h3 class="eco-name">Well Made Foundation</h3>
-        <p class="eco-body">Humanitarian shield and family care. The MADE Framework, the Shield, and generational family programming.</p>
-        <a href="https://jack108510.github.io/well-made-foundation/" class="eco-link">Visit Well Made Foundation →</a>
-      </div>
+<!-- Summits & Retreats -->
+<section class="summits">
+  <div class="summits-inner">
+    <div class="summit-img reveal-left">
+      <img src="images/maui-mountains.jpg" alt="Divine Leadership Summit">
+    </div>
+    <div class="reveal-right">
+      <div class="practice-label">Gatherings</div>
+      <h2>Divine Leadership<br>Summits & Retreats</h2>
+      <div class="gold-line"></div>
+      <p>Immersive, invitation-only gatherings held in sacred locations. These are not conferences — they are consecrations. Each summit is designed to activate divine leadership, deepen somatic practice, and forge lifelong bonds of protection and power.</p>
+      <p>From the mountains of Maui to sanctuaries across the globe, every retreat carries the frequency of the Living Love Modality into lived, embodied experience.</p>
     </div>
   </div>
 </section>
 
-<hr class="gold-divider">
-
-<!-- CULTURAL ROOTS -->
-<section>
-  <div class="section-inner" style="text-align:center">
-    <p class="section-label reveal">The Heritage</p>
-    <h2 class="section-title reveal">Cultural Roots</h2>
-    <hr class="section-rule reveal" style="margin-left:auto;margin-right:auto">
-  </div>
-  <div class="section-inner">
-    <div class="pillars">
-      <div class="pillar reveal reveal-d1">
-        <div class="pillar-letter">S</div>
-        <h3 class="pillar-name">The Feminine Pillar</h3>
-        <p class="pillar-sub">Sampaguita</p>
-        <p class="pillar-body">Heart in Front of Head. The Sampaguita represents grace, nurturing, and the sacred bond of motherhood. It is the living emblem of this collective.</p>
-      </div>
-      <div class="pillar reveal reveal-d2">
-        <div class="pillar-letter">B</div>
-        <h3 class="pillar-name">The Masculine Pillar</h3>
-        <p class="pillar-sub">Bayani</p>
-        <p class="pillar-body">Posture of Victory. The warrior, the structural protection, the noble shield of safety. Strength in service of the family.</p>
-      </div>
-    </div>
-    <p style="margin-top:80px;text-align:center;font-family:var(--serif);font-size:16px;font-style:italic;color:var(--light-gray);max-width:600px;margin-left:auto;margin-right:auto;line-height:1.8" class="reveal">The Sampaguita is the national flower of the Philippines &mdash; a living emblem of this collective's commitment to heritage, beauty, and resilience.</p>
+<!-- Speaking & Media -->
+<section class="speaking" id="speaking">
+  <div class="speaking-inner reveal">
+    <div class="practice-label">Voice</div>
+    <h2>Speaking<br>& Media</h2>
+    <div class="gold-line" style="margin:20px auto 40px"></div>
+    <p>Dr. Jasmine speaks on Clinical Somatics, generational healing, anti-human trafficking, and the architecture of divine leadership. Her voice carries across stages, podcasts, and editorial platforms — always rooted in the same devotion: that every family deserves to be anchored in power and protection.</p>
+    <a href="#" class="btn-gold" style="color:var(--charcoal);border-color:var(--charcoal)">Inquiries</a>
   </div>
 </section>
 
-<!-- IMAGE BREAK: SITTING ON GRASS -->
-<div class="image-break reveal">
-  <div class="image-break-bg" style="background-image:url('images/sitting-on-grass.jpg');background-position:top center"></div>
-  <div class="image-break-overlay" style="background:rgba(26,26,26,.35)"></div>
-</div>
-
-<!-- SEASONAL PROGRAMMING -->
-<section>
-  <div class="section-inner">
-    <p class="section-label reveal">The Rhythm</p>
-    <h2 class="section-title reveal">Seasonal Programming</h2>
-    <hr class="section-rule reveal">
-    <p class="section-body reveal">A four-season solar calendar guides Dr. Jasmine's programming, aligning personal and collective rhythms with the natural world.</p>
-
-    <div class="seasons">
-      <div class="season reveal reveal-d1">
-        <h3 class="season-name">Spring Equinox</h3>
-        <p class="season-quote">"New Beginnings."</p>
-        <p class="season-body">Focus on body care. Rejuvenation of the physical temple. The season of renewal and preparation.</p>
-        <p class="season-flagship">Concludes with the Sampaguita Sunday Gala in May.</p>
-      </div>
-      <div class="season reveal reveal-d2">
-        <h3 class="season-name">Summer Solstice</h3>
-        <p class="season-quote">"Push your light out."</p>
-        <p class="season-body">Executive masterclasses. Divine Leadership Summits. The season of maximum expression and outward impact.</p>
-      </div>
-      <div class="season reveal reveal-d3">
-        <h3 class="season-name">Fall Equinox</h3>
-        <p class="season-quote">"Reap what you have cultivated."</p>
-        <p class="season-body">Renaissance Showcase. Initiates the application process for winter masterclasses. Harvest and assessment.</p>
-      </div>
-      <div class="season reveal reveal-d4">
-        <h3 class="season-name">Winter Solstice</h3>
-        <p class="season-quote">"Sacred Reset."</p>
-        <p class="season-body">Candle-Lit Labyrinth &amp; Silent Retreat on Maui. Sovereign Couples Retreat. Promotes the Sacred Rosary Transition Framework for end-of-life care.</p>
-      </div>
+<!-- Divine Spark -->
+<section class="divine-spark">
+  <div class="divine-spark-inner">
+    <div class="reveal-left">
+      <div class="practice-label">Digital Repository</div>
+      <h2>Divine Spark<br>Platform</h2>
+      <div class="gold-line"></div>
+      <p style="color:#555;font-size:15px;line-height:1.9;margin-bottom:20px">A curated digital repository of somatic frameworks, ancestral practices, and sacred teachings. The Divine Spark Platform houses the intellectual and spiritual architecture of the Living Love Modality — accessible to practitioners, students, and seekers worldwide.</p>
+      <a href="#" class="btn-gold" style="color:var(--charcoal);border-color:var(--charcoal)">Explore the Platform</a>
+    </div>
+    <div class="ds-img reveal-right">
+      <img src="images/mysticbella_beautiful_hawaii_jasmine_flowers_just_past_sunset_421bd657-2b0a-4123.jpg" alt="Divine Spark Platform">
     </div>
   </div>
 </section>
 
-<!-- HEALING IMAGE -->
-<div class="reveal" style="text-align:center;padding:0 48px">
-  <img src="images/mysticbella_close_up_of_hands_over_someones_heart_light_pouri_91b5e347-da1c-4869.jpg" alt="Healing hands" style="width:100%;max-width:900px;max-height:480px;object-fit:cover;display:block;margin:0 auto">
-  <p style="font-family:var(--serif);font-size:11px;font-style:italic;color:var(--light-gray);text-align:center;padding:20px 0;letter-spacing:.5px">Clinical Somatics &mdash; the body as a living system</p>
-</div>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <div class="section-inner">
-    <p class="section-label reveal">Connect</p>
-    <h2 class="section-title reveal">Contact</h2>
-    <hr class="section-rule reveal" style="margin-left:auto;margin-right:auto">
-    <p class="contact-body reveal">To learn more about the Living Love Modality, inquire about retreats, or explore certification pathways, reach out.</p>
-    <a href="mailto:contact@drjasmine.com" class="contact-email reveal">contact@drjasmine.com</a>
+<!-- Cultural Roots -->
+<section class="cultural" id="cultural">
+  <div class="reveal">
+    <h2>Cultural Roots</h2>
+    <div class="gold-line" style="margin:0 auto 60px"></div>
+  </div>
+  <div class="roots-grid">
+    <div class="root reveal">
+      <div class="emoji">🌸</div>
+      <h3>Sampaguita</h3>
+      <div class="subtitle">The Feminine Principle</div>
+      <p>The national flower of the Philippines — delicate yet enduring. Sampaguita represents the feminine lineage: the mothers, daughters, and grandmothers whose quiet strength anchors entire families. She is the scent of home, the promise of return, the flower that blooms even in the hardest soil.</p>
+    </div>
+    <div class="root reveal">
+      <div class="emoji">🛡️</div>
+      <h3>Bayani</h3>
+      <div class="subtitle">The Masculine Principle</div>
+      <p>From "bayanihan" — the spirit of communal unity. Bayani represents the masculine lineage: fathers, sons, uncles who carry the weight of protection not through dominance, but through devotion. He is the pillar, the shield-bearer, the one who builds so others may rest.</p>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- Solar Calendar -->
+<section class="calendar" id="calendar">
+  <div class="reveal">
+    <h2>The 4-Season Solar Calendar</h2>
+    <div class="gold-line" style="margin:0 auto 60px"></div>
+  </div>
+  <div class="seasons">
+    <div class="season reveal">
+      <div class="emoji">🌱</div>
+      <h4>Spring</h4>
+      <p>A season of planting — intentions, lineage stories, and somatic foundations. The ground softens. We begin.</p>
+    </div>
+    <div class="season reveal">
+      <div class="emoji">☀️</div>
+      <h4>Summer</h4>
+      <p>Full expression. The bloom of practiced devotion. Summits, gatherings, and the radiance of embodied leadership.</p>
+    </div>
+    <div class="season reveal">
+      <div class="emoji">🍂</div>
+      <h4>Fall</h4>
+      <p>Harvest and honoring. We gather what was planted, tell the stories of the year, and prepare for the inward turn.</p>
+    </div>
+    <div class="season reveal">
+      <div class="emoji">❄️</div>
+      <h4>Winter</h4>
+      <p>The sacred pause. Rest, reflection, and the deep listening that becomes the soil for the next cycle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Ecosystem -->
+<section class="ecosystem" id="ecosystem">
+  <div class="reveal">
+    <h2>The Living Love Collective</h2>
+    <p style="color:#777;font-size:14px;margin-top:12px">Three pillars. One ecosystem. Complete devotion to family.</p>
+  </div>
+  <div class="eco-links">
+    <a href="https://jack108510.github.io/pure-wellness-joy/" class="eco-card reveal">
+      <h4>Pure Wellness Love</h4>
+      <div class="eco-role">The Branches</div>
+      <p>The lifestyle store, milestone kits, and sensory wellness experience.</p>
+    </a>
+    <a href="https://jack108510.github.io/well-made-foundation/" class="eco-card reveal">
+      <h4>Well Made Foundation</h4>
+      <div class="eco-role">The Soil</div>
+      <p>Community programs, family empowerment, and the anti-trafficking Shield.</p>
+    </a>
+    <a href="#" class="eco-card reveal">
+      <h4>Dr. Jasmine</h4>
+      <div class="eco-role">The Root — You Are Here</div>
+      <p>The source framework, somatic practice, and divine leadership architecture.</p>
+    </a>
+  </div>
+</section>
+
+<!-- Shield Note -->
+<div class="shield-note">
+  $100 from every premium ticket goes directly to the Anti-Human Trafficking Shield.<br>Protection is not optional. It is architectural.
+</div>
+
+<!-- Footer -->
 <footer>
-<div class="footer-inner">
-  <h2 class="footer-title">The Living Love Collective</h2>
-  <p class="footer-sub">An editorial ecosystem of pure living, whole-family generational care, and conscious leadership.</p>
+  <div class="footer-title">T H E &nbsp; L I V I N G &nbsp; L O V E &nbsp; C O L L E C T I V E</div>
+  <div class="footer-subtitle">An editorial ecosystem of pure living, whole-family generational care, and conscious leadership.</div>
   <div class="footer-grid">
     <div class="footer-col">
-      <h3 class="footer-col-title">Pure Wellness Love</h3>
-      <p class="footer-col-desc">The Branches (Commerce &amp; Sanctuary Elements)</p>
+      <h4><a href="https://jack108510.github.io/pure-wellness-joy/" style="color:#fff;text-decoration:none">PURE WELLNESS LOVE</a></h4>
+      <div class="col-role">The Branches</div>
       <ul>
-        <li><a href="https://jack108510.github.io/pure-wellness-joy/#store">Shop The Lifestyle Store</a></li>
-        <li><a href="https://jack108510.github.io/pure-wellness-joy/#bloom">Join The Bloom Circle Registry</a></li>
-        <li><a href="https://jack108510.github.io/pure-wellness-joy/#store">Explore Milestone &amp; Ritual Kits</a></li>
+        <li><a href="https://jack108510.github.io/pure-wellness-joy/">Shop The Lifestyle Store</a></li>
+        <li><a href="https://jack108510.github.io/pure-wellness-joy/">Join The Bloom Circle</a></li>
+        <li><a href="https://jack108510.github.io/pure-wellness-joy/">Explore Milestone Kits</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h3 class="footer-col-title">Well Made Foundation</h3>
-      <p class="footer-col-desc">The Soil (Humanitarian Shield &amp; Family Care)</p>
+      <h4><a href="https://jack108510.github.io/well-made-foundation/" style="color:#fff;text-decoration:none">WELL MADE FOUNDATION</a></h4>
+      <div class="col-role">The Soil</div>
       <ul>
-        <li><a href="https://jack108510.github.io/well-made-foundation/#membership">Donate: $30 Lifetime Family Entry</a></li>
-        <li><a href="https://jack108510.github.io/well-made-foundation/#programs">Mothers &amp; Daughters / Moms &amp; Dads Empowered</a></li>
-        <li><a href="https://jack108510.github.io/well-made-foundation/#programs">Participate in the Family Pentathlon</a></li>
+        <li><a href="https://jack108510.github.io/well-made-foundation/">Donate: $30 Lifetime Entry</a></li>
+        <li><a href="https://jack108510.github.io/well-made-foundation/">MADE Programs</a></li>
+        <li><a href="https://jack108510.github.io/well-made-foundation/">Family Pentathlon</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h3 class="footer-col-title">Dr. Jasmine</h3>
-      <p class="footer-col-desc">The Root (Clinical Somatics &amp; Personal Authority)</p>
+      <h4><a href="https://jack108510.github.io/dr-jasmine-site/" style="color:#fff;text-decoration:none">DR. JASMINE</a></h4>
+      <div class="col-role">The Root</div>
       <ul>
-        <li><a href="https://jack108510.github.io/dr-jasmine-site/#offerings">Learn About the Divine Spark Platform</a></li>
-        <li><a href="https://jack108510.github.io/dr-jasmine-site/#practice">Advanced Somatic Practitioner Frameworks</a></li>
-        <li><a href="https://jack108510.github.io/dr-jasmine-site/#offerings">Executive Leadership Summits &amp; Retreats</a></li>
+        <li><a href="https://jack108510.github.io/dr-jasmine-site/">Divine Spark Platform</a></li>
+        <li><a href="https://jack108510.github.io/dr-jasmine-site/">Somatic Practitioner Frameworks</a></li>
+        <li><a href="https://jack108510.github.io/dr-jasmine-site/">Executive Leadership Summits</a></li>
       </ul>
     </div>
   </div>
-  <p class="footer-copy">&copy; 2026 The Living Love Collective. Founded and guided with complete devotion by Dr. Jasmine Therese Esguerra.</p>
-</div>
+  <div class="footer-copy">&copy; 2026 The Living Love Collective. Founded and guided with complete devotion by Dr. Jasmine Therese Esguerra.</div>
 </footer>
 
 <script>
 // Scroll reveal
-const obs=new IntersectionObserver(e=>{
-  e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})
-},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-// Hero parallax
-const hb=document.getElementById('heroBg');
-let tk=false;
-window.addEventListener('scroll',()=>{
-  if(!tk){requestAnimationFrame(()=>{
-    const s=window.pageYOffset;
-    if(hb&&s<window.innerHeight)hb.style.transform=`translate3d(0,${s*.35}px,0)`;
-    tk=false;
-  });tk=true}
-});
-
-// Nav hide/show
-let ls=0;const nv=document.querySelector('nav');
-window.addEventListener('scroll',()=>{
-  const c=window.pageYOffset;
-  if(c>ls&&c>100)nv.style.transform='translateY(-100%)';
-  else nv.style.transform='translateY(0)';
-  ls=c;
-});
-
-// Image break parallax
-document.querySelectorAll('.image-break-bg').forEach(bg=>{
-  const parent=bg.parentElement;
-  let t=false;
-  window.addEventListener('scroll',()=>{
-    if(!t){requestAnimationFrame(()=>{
-      const r=parent.getBoundingClientRect();
-      const c=r.top+r.height/2;
-      const v=window.innerHeight/2;
-      bg.style.transform=`translateY(${(c-v)*.12}px)`;
-      t=false;
-    });t=true}
-  });
-});
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>observer.observe(el));
+// Nav scroll effect
+window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>80)});
 </script>
 </body>
 </html>
