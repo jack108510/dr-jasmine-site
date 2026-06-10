@@ -5,468 +5,422 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr. Jasmine Therese Esguerra, DC | The Living Love Collective</title>
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
-  html { scroll-behavior: smooth; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #fdfbf7;
-    color: #1a1918;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+:root{
+  --ivory:#fdfbf7;
+  --charcoal:#1a1a1a;
+  --gold:#c9a96e;
+  --gold-light:#d4bc8a;
+  --cream:#f5f0e8;
+  --warm-gray:#4a4643;
+  --light-gray:#76716d;
+  --border:#eae7e2;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
 
-  ::selection { background: #1a1918; color: #fdfbf7; }
+body{
+  font-family:var(--sans);
+  background:var(--ivory);
+  color:var(--charcoal);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--charcoal);color:var(--ivory)}
 
-  /* SCROLL REVEAL */
-  .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.35s; }
-  .reveal-delay-5 { transition-delay: 0.4s; }
-  .reveal-delay-6 { transition-delay: 0.45s; }
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}
+.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.35s}
+.reveal-d5{transition-delay:.4s}.reveal-d6{transition-delay:.45s}
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(253, 251, 247, 0.92);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid #eae7e2;
-    transition: transform 0.3s ease;
-  }
-  .nav-inner {
-    max-width: 1400px; margin: 0 auto;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 40px;
-  }
-  .nav-logo {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 14px; letter-spacing: 3px; text-transform: uppercase;
-    color: #1a1918; text-decoration: none; font-weight: 400;
-    transition: opacity 0.3s;
-  }
-  .nav-logo:hover { opacity: 0.7; }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
-    color: #4a4643; text-decoration: none; transition: color 0.3s;
-    position: relative;
-  }
-  .nav-links a::after {
-    content: '';
-    position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
-    background: #c9a84c;
-    transition: width 0.3s ease;
-  }
-  .nav-links a:hover { color: #1a1918; }
-  .nav-links a:hover::after { width: 100%; }
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(253,251,247,.88);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(234,231,226,.6);
+  transition:transform .3s ease;
+}
+.nav-inner{
+  max-width:1400px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 48px;
+}
+.nav-logo{
+  font-family:var(--serif);font-size:13px;letter-spacing:4px;
+  text-transform:uppercase;color:var(--charcoal);text-decoration:none;
+  transition:letter-spacing .4s;
+}
+.nav-logo:hover{letter-spacing:6px}
+.nav-links{display:flex;gap:40px;list-style:none}
+.nav-links a{
+  font-family:var(--serif);font-size:11px;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--warm-gray);text-decoration:none;
+  position:relative;transition:color .3s;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-6px;left:0;width:0;height:1px;
+  background:var(--gold);transition:width .3s;
+}
+.nav-links a:hover{color:var(--charcoal)}
+.nav-links a:hover::after{width:100%}
 
-  @media (max-width: 640px) {
-    .nav-inner { padding: 14px 20px; }
-    .nav-links { gap: 20px; }
-    .nav-links a { font-size: 11px; letter-spacing: 1.5px; }
-    .nav-logo { font-size: 12px; }
-  }
+@media(max-width:768px){
+  .nav-inner{padding:14px 24px}
+  .nav-links{gap:24px}
+  .nav-links a{font-size:10px;letter-spacing:2px}
+  .nav-logo{font-size:11px;letter-spacing:3px}
+}
 
-  /* EDITORIAL IMAGES */
-  .editorial-img { width: 100%; display: block; object-fit: cover; }
-  .img-full { width: 100%; max-height: 520px; object-fit: cover; }
-  .img-contained { max-width: 900px; margin: 0 auto; display: block; }
-  .img-caption {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 11px; font-style: italic; color: #76716d;
-    text-align: center; padding: 16px 0; letter-spacing: 0.5px;
-  }
+/* ── HERO ── */
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:0 48px;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;top:-80px;left:0;width:100%;height:calc(100% + 160px);
+  background:url('images/mrs-maui-crown.jpg') center/cover no-repeat;
+  will-change:transform;z-index:0;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(26,26,26,.6) 0%,rgba(26,26,26,.4) 40%,rgba(26,26,26,.75) 100%);
+  z-index:1;
+}
+.hero-content{position:relative;z-index:2;max-width:900px}
+.hero-eyebrow{
+  font-family:var(--serif);font-size:11px;letter-spacing:6px;
+  text-transform:uppercase;color:rgba(253,251,247,.5);margin-bottom:40px;
+}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(48px,8vw,100px);
+  font-weight:400;line-height:1.05;letter-spacing:-2px;
+  color:var(--ivory);margin-bottom:20px;
+}
+.hero-tagline{
+  font-family:var(--serif);font-size:clamp(16px,2vw,22px);
+  font-weight:400;font-style:italic;color:rgba(253,251,247,.7);margin-bottom:48px;
+}
+.hero-divider{
+  width:80px;height:1px;border:none;margin:0 auto 48px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  animation:goldPulse 4s ease-in-out infinite;
+}
+@keyframes goldPulse{
+  0%,100%{width:80px;opacity:.6}50%{width:140px;opacity:1}
+}
+.hero-subtitle{
+  font-family:var(--serif);font-size:18px;font-style:italic;
+  color:rgba(253,251,247,.75);line-height:1.9;max-width:640px;margin:0 auto;
+}
+.hero-scroll{
+  position:absolute;bottom:48px;left:50%;transform:translateX(-50%);
+  z-index:2;opacity:.4;animation:bounce 2.5s ease-in-out infinite;
+}
+.hero-scroll svg{width:20px;height:20px;stroke:var(--ivory)}
+@keyframes bounce{
+  0%,100%{transform:translateX(-50%) translateY(0)}
+  50%{transform:translateX(-50%) translateY(10px)}
+}
 
-  /* HERO - PARALLAX WITH DARK OVERLAY */
-  .hero {
-    min-height: 100vh; display: flex; align-items: center; justify-content: center;
-    text-align: center; padding: 140px 40px 120px;
-    position: relative; overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute; top: -60px; left: 0; width: 100%; height: calc(100% + 120px);
-    background: url('images/mrs-maui-crown.jpg') center/cover no-repeat;
-    will-change: transform;
-    z-index: 0;
-  }
-  .hero-overlay {
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to bottom,
-      rgba(26,25,24,0.55) 0%,
-      rgba(26,25,24,0.45) 40%,
-      rgba(26,25,24,0.7) 100%);
-    z-index: 1;
-  }
-  .hero-content {
-    position: relative; z-index: 2; max-width: 800px;
-  }
-  .hero-eyebrow {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
-    color: rgba(255,255,255,0.65); margin-bottom: 32px;
-  }
-  .hero h1 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: clamp(36px, 6vw, 72px);
-    font-weight: 400; line-height: 1.1;
-    letter-spacing: -0.5px; color: #fdfbf7;
-    margin-bottom: 16px;
-  }
-  .hero-title-light {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: clamp(18px, 2.5vw, 24px);
-    font-weight: 400; font-style: italic;
-    color: rgba(253,251,247,0.75); margin-bottom: 40px;
-  }
-  .hero-rule {
-    width: 60px; height: 1px;
-    background: linear-gradient(90deg, transparent, #c9a84c, transparent);
-    margin: 0 auto 40px; border: none;
-    animation: goldPulse 3s ease-in-out infinite;
-  }
-  @keyframes goldPulse {
-    0%, 100% { width: 60px; opacity: 0.7; }
-    50% { width: 120px; opacity: 1; }
-  }
-  .hero-subtitle {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px; font-style: italic;
-    color: rgba(253,251,247,0.8); line-height: 1.8; max-width: 600px; margin: 0 auto;
-  }
-  .hero-scroll {
-    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-    z-index: 2; opacity: 0.5;
-    animation: scrollBounce 2s ease-in-out infinite;
-  }
-  .hero-scroll svg { width: 24px; height: 24px; stroke: #fdfbf7; }
-  @keyframes scrollBounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
-  }
+/* ── SECTION BASE ── */
+section{padding:140px 48px}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{
+  font-family:var(--serif);font-size:10px;letter-spacing:5px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:28px;
+}
+.section-title{
+  font-family:var(--serif);
+  font-size:clamp(36px,5vw,64px);
+  font-weight:400;line-height:1.1;color:var(--charcoal);margin-bottom:28px;
+}
+.section-rule{
+  width:48px;height:1px;background:var(--gold);margin-bottom:48px;border:none;
+}
+.section-body{
+  font-family:var(--sans);font-size:16px;color:var(--warm-gray);
+  line-height:1.9;max-width:640px;
+}
 
-  /* SPLIT IMAGE BREAK */
-  .image-break {
-    display: grid; grid-template-columns: 1fr 1fr;
-    min-height: 400px; overflow: hidden;
-  }
-  .image-break-half {
-    background-size: cover; background-position: center;
-    position: relative;
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  .image-break:hover .image-break-half {
-    transform: scale(1.02);
-  }
-  .image-break-full {
-    width: 100%; height: 420px;
-    background-size: cover; background-position: center;
-    position: relative;
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  .image-break-full:hover { transform: scale(1.02); }
-  .image-break-overlay {
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(26,25,24,0.25);
-  }
-  .image-break-caption {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    padding: 40px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 13px; font-style: italic; color: rgba(253,251,247,0.85);
-    background: linear-gradient(transparent, rgba(26,25,24,0.5));
-  }
+/* ── SPLIT SECTIONS ── */
+.split{
+  display:grid;grid-template-columns:1fr 1fr;min-height:560px;overflow:hidden;
+}
+.split-image{
+  background-size:cover;background-position:center;position:relative;
+  min-height:400px;
+}
+.split-content{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:80px 64px;
+}
+.split-content .section-title{
+  font-size:clamp(28px,3.5vw,48px);
+}
 
-  @media (max-width: 768px) {
-    .image-break { grid-template-columns: 1fr; min-height: auto; }
-    .image-break-half { height: 280px; }
-    .image-break-full { height: 280px; }
-  }
+@media(max-width:900px){
+  .split{grid-template-columns:1fr}
+  .split-image{min-height:320px}
+  .split-content{padding:60px 32px}
+}
 
-  /* SECTION SHARED */
-  section { padding: 120px 40px; }
-  .section-inner { max-width: 1100px; margin: 0 auto; }
-  .section-label {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
-    color: #76716d; margin-bottom: 24px;
-  }
-  .section-title {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: clamp(32px, 4.5vw, 52px);
-    font-weight: 400; line-height: 1.15;
-    color: #1a1918; margin-bottom: 24px;
-  }
-  .section-rule {
-    width: 40px; height: 1px; background: #c9a84c;
-    margin-bottom: 40px; border: none;
-  }
-  .section-body {
-    font-size: 16px; color: #4a4643; line-height: 1.8; max-width: 680px;
-  }
-  .section-body strong {
-    transition: color 0.3s;
-  }
+/* ── FULL-WIDTH IMAGE BREAK ── */
+.image-break{
+  position:relative;width:100%;height:50vh;min-height:360px;
+  max-height:560px;overflow:hidden;
+}
+.image-break-bg{
+  position:absolute;inset:-40px;
+  background-size:cover;background-position:center;
+  will-change:transform;
+}
+.image-break-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(26,26,26,.15),rgba(26,26,26,.5));
+}
+.image-break-text{
+  position:absolute;bottom:0;left:0;right:0;padding:48px 64px;
+  font-family:var(--serif);font-size:clamp(14px,1.5vw,18px);
+  font-style:italic;color:rgba(253,251,247,.8);
+  background:linear-gradient(transparent,rgba(26,26,26,.4));
+}
 
-  /* PRACTICE TIERS */
-  .tiers {
-    margin-top: 80px;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 60px;
-  }
-  .tier {
-    padding: 40px;
-    border: 1px solid transparent;
-    transition: border-color 0.4s, background 0.4s;
-  }
-  .tier:hover {
-    border-color: #eae7e2;
-    background: rgba(234,231,226,0.3);
-  }
-  .tier-name {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 22px; font-weight: 400; color: #1a1918;
-    margin-bottom: 4px;
-  }
-  .tier-price {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16px; color: #c9a84c; margin-bottom: 16px;
-    letter-spacing: 1px;
-  }
-  .tier-body { font-size: 15px; color: #4a4643; line-height: 1.8; }
+@media(max-width:768px){
+  .image-break{height:40vh;min-height:280px}
+  .image-break-text{padding:32px}
+}
 
-  .shield-note {
-    margin-top: 60px; padding-top: 40px;
-    border-top: 1px solid #eae7e2;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 15px; font-style: italic; color: #76716d;
-    line-height: 1.8; max-width: 680px;
-  }
+/* ── GOLD DIVIDER ── */
+.gold-divider{
+  width:100%;height:1px;border:none;
+  background:linear-gradient(90deg,transparent 5%,var(--gold) 50%,transparent 95%);
+  opacity:.4;margin:0;
+}
 
-  @media (max-width: 768px) {
-    .tiers { grid-template-columns: 1fr; gap: 48px; }
-  }
+/* ── QUOTE CALLOUT ── */
+.callout{
+  background:var(--cream);text-align:center;padding:120px 48px;
+}
+.callout-number{
+  font-family:var(--serif);font-size:clamp(64px,10vw,120px);
+  font-weight:400;color:var(--gold);line-height:1;margin-bottom:24px;
+}
+.callout-text{
+  font-family:var(--serif);font-size:clamp(18px,2.5vw,28px);
+  font-style:italic;color:var(--charcoal);max-width:700px;
+  margin:0 auto;line-height:1.6;
+}
 
-  /* OFFERINGS EDITORIAL LIST */
-  .offerings-list {
-    margin-top: 60px;
-    border-top: 1px solid #eae7e2;
-  }
-  .offering-item {
-    padding: 32px 0; border-bottom: 1px solid #eae7e2;
-    display: flex; align-items: baseline; gap: 20px;
-    cursor: default;
-    transition: padding-left 0.3s ease, background 0.3s;
-  }
-  .offering-item:hover {
-    padding-left: 16px;
-    background: rgba(234,231,226,0.2);
-  }
-  .offering-num {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 28px; color: #eae7e2; letter-spacing: 1px; flex-shrink: 0;
-    font-weight: 400; line-height: 1;
-    transition: color 0.3s;
-  }
-  .offering-item:hover .offering-num {
-    color: #c9a84c;
-  }
-  .offering-name {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px; font-weight: 400; color: #1a1918;
-    margin-bottom: 4px;
-  }
-  .offering-desc {
-    font-size: 14px; color: #76716d; line-height: 1.7;
-  }
+/* ── CARDS ── */
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:80px}
+.card{
+  padding:56px 48px;border:1px solid var(--border);
+  transition:all .5s cubic-bezier(.22,1,.36,1);
+  position:relative;overflow:hidden;
+}
+.card::after{
+  content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
+  background:var(--gold);transition:width .4s ease;
+}
+.card:hover{
+  border-color:var(--gold);transform:translateY(-6px);
+  box-shadow:0 20px 60px rgba(0,0,0,.06);
+}
+.card:hover::after{width:100%}
+.card-label{
+  font-family:var(--serif);font-size:10px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:20px;
+}
+.card-title{
+  font-family:var(--serif);font-size:26px;font-weight:400;
+  color:var(--charcoal);margin-bottom:8px;
+}
+.card-price{
+  font-family:var(--serif);font-size:16px;color:var(--gold);
+  letter-spacing:1px;margin-bottom:20px;
+}
+.card-body{
+  font-size:15px;color:var(--warm-gray);line-height:1.8;
+}
 
-  /* COLLECTIVE ECOSYSTEM */
-  .ecosystem-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 40px; margin-top: 60px;
-  }
-  .ecosystem-engine {
-    padding: 40px 32px; border: 1px solid #eae7e2;
-    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  }
-  .ecosystem-engine:hover {
-    border-color: #a39e99;
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-  }
-  .ecosystem-engine.engine-active {
-    border-color: #1a1918;
-    background: rgba(26,25,24,0.02);
-  }
-  .engine-label {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-    color: #c9a84c; margin-bottom: 12px;
-  }
-  .engine-name {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px; font-weight: 400; color: #1a1918;
-    margin-bottom: 8px;
-  }
-  .engine-body { font-size: 13px; color: #76716d; line-height: 1.7; }
+@media(max-width:768px){
+  .card-grid{grid-template-columns:1fr;gap:32px}
+  .card{padding:40px 32px}
+}
 
-  @media (max-width: 768px) {
-    .ecosystem-grid { grid-template-columns: 1fr; }
-  }
+/* ── OFFERINGS LIST ── */
+.offering-list{margin-top:80px;border-top:1px solid var(--border)}
+.offering{
+  padding:36px 0;border-bottom:1px solid var(--border);
+  display:flex;align-items:baseline;gap:24px;
+  transition:padding-left .4s,background .4s;cursor:default;
+}
+.offering:hover{padding-left:20px;background:rgba(234,231,226,.15)}
+.offering-num{
+  font-family:var(--serif);font-size:32px;color:var(--border);
+  letter-spacing:1px;flex-shrink:0;font-weight:400;line-height:1;
+  transition:color .3s;
+}
+.offering:hover .offering-num{color:var(--gold)}
+.offering-name{
+  font-family:var(--serif);font-size:20px;font-weight:400;
+  color:var(--charcoal);margin-bottom:4px;
+}
+.offering-desc{font-size:14px;color:var(--light-gray);line-height:1.7}
 
-  /* CULTURAL ROOTS */
-  .pillars {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 80px; margin-top: 80px;
-  }
-  .pillar { text-align: center; }
-  .pillar-letter {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 120px; color: #eae7e2; line-height: 1;
-    margin-bottom: 16px;
-    transition: color 0.5s;
-  }
-  .pillar:hover .pillar-letter {
-    color: #c9a84c;
-  }
-  .pillar-name {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 28px; font-weight: 400; color: #1a1918;
-    margin-bottom: 8px;
-  }
-  .pillar-subtitle {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 14px; font-style: italic; color: #76716d;
-    margin-bottom: 24px;
-  }
-  .pillar-body { font-size: 15px; color: #4a4643; line-height: 1.8; }
+/* ── ECOSYSTEM GRID ── */
+.eco-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:80px;border-top:1px solid var(--border)}
+.eco-card{
+  padding:48px 40px;border-bottom:1px solid var(--border);
+  border-right:1px solid var(--border);
+  transition:all .4s ease;
+}
+.eco-card:nth-child(3n){border-right:none}
+.eco-card:hover{background:rgba(234,231,226,.2);transform:translateY(-3px)}
+.eco-card.active{background:rgba(201,169,110,.04);border-color:var(--gold)}
+.eco-label{
+  font-family:var(--serif);font-size:10px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:16px;
+}
+.eco-name{
+  font-family:var(--serif);font-size:20px;font-weight:400;
+  color:var(--charcoal);margin-bottom:12px;
+}
+.eco-body{font-size:13px;color:var(--light-gray);line-height:1.7}
+.eco-link{
+  display:inline-block;margin-top:16px;
+  font-family:var(--serif);font-size:11px;letter-spacing:1.5px;
+  color:var(--gold);text-decoration:none;
+  border-bottom:1px solid transparent;transition:border-color .3s;
+}
+.eco-link:hover{border-color:var(--gold)}
 
-  .cultural-note {
-    margin-top: 80px; text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16px; font-style: italic; color: #76716d;
-    max-width: 600px; margin-left: auto; margin-right: auto;
-    line-height: 1.8;
-  }
+@media(max-width:768px){
+  .eco-grid{grid-template-columns:1fr}
+  .eco-card{border-right:none}
+}
 
-  @media (max-width: 768px) {
-    .pillars { grid-template-columns: 1fr; gap: 60px; }
-  }
+/* ── PILLARS ── */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:100px;margin-top:100px}
+.pillar{text-align:center}
+.pillar-letter{
+  font-family:var(--serif);font-size:140px;color:var(--border);
+  line-height:1;margin-bottom:20px;transition:color .6s;
+}
+.pillar:hover .pillar-letter{color:var(--gold)}
+.pillar-name{
+  font-family:var(--serif);font-size:28px;font-weight:400;
+  color:var(--charcoal);margin-bottom:8px;
+}
+.pillar-sub{
+  font-family:var(--serif);font-size:14px;font-style:italic;
+  color:var(--light-gray);margin-bottom:28px;
+}
+.pillar-body{font-size:15px;color:var(--warm-gray);line-height:1.8}
 
-  /* SEASONS */
-  .seasons-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 60px; margin-top: 60px;
-  }
-  .season {
-    padding: 32px;
-    border-left: 2px solid #eae7e2;
-    transition: border-color 0.3s, background 0.3s;
-  }
-  .season:hover {
-    border-left-color: #c9a84c;
-    background: rgba(201,168,76,0.03);
-  }
-  .season-name {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 22px; font-weight: 400; color: #1a1918;
-    margin-bottom: 8px;
-  }
-  .season-quote {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 14px; font-style: italic; color: #76716d;
-    margin-bottom: 16px; line-height: 1.7;
-  }
-  .season-details { font-size: 14px; color: #4a4643; line-height: 1.8; }
-  .season-flagship {
-    margin-top: 8px; font-size: 13px; color: #76716d;
-  }
+@media(max-width:768px){.pillars{grid-template-columns:1fr;gap:60px}}
 
-  @media (max-width: 768px) {
-    .seasons-grid { grid-template-columns: 1fr; gap: 48px; }
-  }
+/* ── SEASONS ── */
+.seasons{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:80px;border-top:1px solid var(--border)}
+.season{
+  padding:48px 40px;border-bottom:1px solid var(--border);
+  border-right:1px solid var(--border);
+  transition:all .4s;
+}
+.season:nth-child(2n){border-right:none}
+.season:hover{background:rgba(201,169,110,.04)}
+.season-name{
+  font-family:var(--serif);font-size:24px;font-weight:400;
+  color:var(--charcoal);margin-bottom:10px;
+}
+.season-quote{
+  font-family:var(--serif);font-size:14px;font-style:italic;
+  color:var(--light-gray);margin-bottom:16px;line-height:1.7;
+}
+.season-body{font-size:14px;color:var(--warm-gray);line-height:1.8}
+.season-flagship{margin-top:10px;font-size:13px;color:var(--light-gray);font-style:italic}
 
-  /* CONTACT */
-  .contact-section { text-align: center; }
-  .contact-body {
-    font-size: 16px; color: #4a4643; max-width: 560px;
-    margin: 0 auto; line-height: 1.8;
-  }
-  .contact-email {
-    display: inline-block; margin-top: 32px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px; color: #1a1918; text-decoration: none;
-    border-bottom: 1px solid #c9a84c; padding-bottom: 2px;
-    transition: border-color 0.3s, color 0.3s;
-  }
-  .contact-email:hover { border-color: #1a1918; }
+@media(max-width:768px){
+  .seasons{grid-template-columns:1fr}
+  .season{border-right:none}
+}
 
-  /* PARALLAX FIX FOR MOBILE */
-  @media (max-width: 768px) {
-    .hero-bg {
-      background-attachment: scroll;
-      top: 0; height: 100%;
-    }
-  }
+/* ── DARK SECTION ── */
+.dark{background:var(--charcoal);color:var(--ivory)}
+.dark .section-label{color:var(--light-gray)}
+.dark .section-title{color:var(--ivory)}
+.dark .section-body{color:#a39e99}
+.dark .section-rule{background:var(--gold)}
 
-  /* CTA BUTTONS */
-  .cta-btn {
-    display: inline-block;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #fdfbf7;
-    background: #1a1918;
-    padding: 16px 40px;
-    text-decoration: none;
-    transition: background 0.3s, letter-spacing 0.3s;
-    cursor: pointer;
-    border: none;
-  }
-  .cta-btn:hover {
-    background: #3d3a38;
-    letter-spacing: 3px;
-  }
-  .cta-btn-outline {
-    display: inline-block;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #1a1918;
-    background: transparent;
-    padding: 14px 38px;
-    text-decoration: none;
-    border: 1px solid #1a1918;
-    transition: background 0.3s, color 0.3s, letter-spacing 0.3s;
-    cursor: pointer;
-  }
-  .cta-btn-outline:hover {
-    background: #1a1918;
-    color: #fdfbf7;
-    letter-spacing: 3px;
-  }
-  .cta-group {
-    margin-top: 40px;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
+/* ── CTA BUTTONS ── */
+.cta{
+  display:inline-block;font-family:var(--serif);font-size:12px;
+  letter-spacing:3px;text-transform:uppercase;padding:18px 48px;
+  text-decoration:none;transition:all .4s;cursor:pointer;border:none;
+}
+.cta-dark{background:var(--charcoal);color:var(--ivory)}
+.cta-dark:hover{background:#3d3a38;letter-spacing:4px}
+.cta-outline{
+  background:transparent;color:var(--charcoal);border:1px solid var(--charcoal);
+}
+.cta-outline:hover{
+  background:var(--charcoal);color:var(--ivory);letter-spacing:4px;
+}
+.cta-gold{background:var(--gold);color:var(--ivory)}
+.cta-gold:hover{background:var(--gold-light);letter-spacing:4px}
+.cta-group{margin-top:48px;display:flex;gap:20px;flex-wrap:wrap}
+
+/* ── CONTACT ── */
+.contact{text-align:center}
+.contact-body{
+  font-size:16px;color:var(--warm-gray);max-width:560px;
+  margin:0 auto;line-height:1.9;
+}
+.contact-email{
+  display:inline-block;margin-top:36px;
+  font-family:var(--serif);font-size:20px;color:var(--charcoal);
+  text-decoration:none;border-bottom:1px solid var(--gold);
+  padding-bottom:3px;transition:all .3s;
+}
+.contact-email:hover{border-color:var(--charcoal);letter-spacing:1px}
+
+/* ── FOOTER ── */
+footer{
+  padding:80px 48px;background:var(--ivory);
+  border-top:1px solid var(--border);
+}
+.footer-inner{max-width:1200px;margin:0 auto;text-align:center}
+.footer-title{
+  font-family:var(--serif);font-size:16px;letter-spacing:5px;
+  text-transform:uppercase;color:var(--charcoal);margin-bottom:8px;font-weight:400;
+}
+.footer-sub{
+  font-family:var(--serif);font-size:12px;font-style:italic;
+  color:var(--light-gray);margin-bottom:48px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:48px;text-align:left;margin-bottom:48px;
+  padding-bottom:48px;border-bottom:1px solid var(--border);
+}
+.footer-col-title{
+  font-family:var(--serif);font-size:11px;letter-spacing:2.5px;
+  text-transform:uppercase;color:#3d3a38;margin-bottom:14px;
+}
+.footer-col-desc{font-size:11px;color:var(--light-gray);line-height:1.6;margin-bottom:14px}
+.footer-col ul{list-style:none;padding:0;font-size:12px;line-height:2.2}
+.footer-col a{color:var(--warm-gray);text-decoration:none;transition:color .3s}
+.footer-col a:hover{color:var(--charcoal)}
+.footer-copy{font-size:11px;color:#a39e99;letter-spacing:1px}
 </style>
 </head>
 <body>
@@ -488,11 +442,11 @@
 <section class="hero">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-content reveal">
+  <div class="hero-content">
     <p class="hero-eyebrow">The Living Love Collective</p>
-    <h1>Dr. Jasmine Therese<br>Esguerra, DC</h1>
-    <p class="hero-title-light">Doctor of Chiropractic &mdash; Mrs. Maui</p>
-    <hr class="hero-rule">
+    <h1>Dr. Jasmine<br>Therese Esguerra</h1>
+    <p class="hero-tagline">Doctor of Chiropractic &mdash; Mrs. Maui</p>
+    <hr class="hero-divider">
     <p class="hero-subtitle">Optimizing the human biological experience through clinical mastery, somatic intelligence, and the Living Love Modality.</p>
   </div>
   <div class="hero-scroll">
@@ -500,55 +454,61 @@
   </div>
 </section>
 
-<!-- IMAGE BREAK: Art print + Blue lace dress -->
-<div class="image-break reveal">
-  <div class="image-break-half" style="background-image: url('images/art-print.png');">
-    <div class="image-break-overlay"></div>
-  </div>
-  <div class="image-break-half" style="background-image: url('images/blue-lace-dress.jpg'); background-position: top center;">
-    <div class="image-break-overlay"></div>
-    <div class="image-break-caption">The Living Love Modality &mdash; body, mind, and spirit in unified transformation</div>
+<!-- SPLIT: ART PRINT + INTRO -->
+<div class="split reveal">
+  <div class="split-image" style="background-image:url('images/art-print.png')"></div>
+  <div class="split-content" style="background:var(--cream)">
+    <p class="section-label">The Foundation</p>
+    <h2 class="section-title">The Practice</h2>
+    <hr class="section-rule">
+    <p class="section-body"><strong>Clinical Somatics.</strong> The body as a living system, not a machine. A practice built on the understanding that structure governs function, and that the human body carries its own intelligence when properly supported.</p>
+    <p class="section-body" style="margin-top:24px"><strong>The Living Love Modality.</strong> Her signature framework. A system of somatic intelligence, clinical mastery, and conscious transformation.</p>
   </div>
 </div>
 
-<!-- THE PRACTICE -->
+<!-- QUOTE CALLOUT -->
+<div class="callout reveal">
+  <div class="callout-number">$10K</div>
+  <p class="callout-text">The Living Love Program &mdash; an immersive journey through body, mind, and spirit in unified transformation</p>
+</div>
+
+<!-- PROGRAMS AS CARDS -->
 <section id="practice">
   <div class="section-inner">
-    <p class="section-label reveal">The Foundation</p>
-    <h2 class="section-title reveal">The Practice</h2>
+    <p class="section-label reveal">The Pathway</p>
+    <h2 class="section-title reveal">Two Tiers of Transformation</h2>
     <hr class="section-rule reveal">
 
-    <p class="section-body reveal"><strong style="color:#1a1918;">Clinical Somatics.</strong> The body as a living system, not a machine. This is Dr. Jasmine's clinical foundation &mdash; a practice built on the understanding that structure governs function, and that the human body carries its own intelligence when properly supported.</p>
-
-    <p class="section-body reveal" style="margin-top: 32px;"><strong style="color:#1a1918;">The Living Love Modality.</strong> Her signature framework. A system of somatic intelligence, clinical mastery, and conscious transformation. Offered in two tiers:</p>
-
-    <div class="tiers">
-      <div class="tier reveal reveal-delay-1">
-        <h3 class="tier-name">Living Love Program</h3>
-        <p class="tier-price">$10,000</p>
-        <p class="tier-body">An immersive personal journey. Deep guided work with Dr. Jasmine through the Living Love Modality &mdash; body, mind, and spirit in unified transformation.</p>
+    <div class="card-grid">
+      <div class="card reveal reveal-d1">
+        <p class="card-label">Tier I</p>
+        <h3 class="card-title">Living Love Program</h3>
+        <p class="card-price">$10,000</p>
+        <p class="card-body">An immersive personal journey. Deep guided work with Dr. Jasmine through the Living Love Modality &mdash; body, mind, and spirit in unified transformation.</p>
       </div>
-      <div class="tier reveal reveal-delay-2">
-        <h3 class="tier-name">Living Love Modality Certification</h3>
-        <p class="tier-price">$25,000</p>
-        <p class="tier-body">For practitioners. A comprehensive certification pathway through the Living Love Modality. Graduates become certified facilitators, authorized to guide others through the framework.</p>
+      <div class="card reveal reveal-d2">
+        <p class="card-label">Tier II</p>
+        <h3 class="card-title">Living Love Modality Certification</h3>
+        <p class="card-price">$25,000</p>
+        <p class="card-body">For practitioners. A comprehensive certification pathway. Graduates become certified facilitators, authorized to guide others through the framework.</p>
       </div>
     </div>
 
-    <p class="shield-note reveal">$100 from every premium ticket goes to the Anti-Human Trafficking Shield via the WellMade Foundation.</p>
+    <p class="section-body reveal" style="margin-top:60px;padding-top:40px;border-top:1px solid var(--border);font-style:italic;color:var(--light-gray)">
+      $100 from every premium ticket goes to the Anti-Human Trafficking Shield via the WellMade Foundation.
+    </p>
     <div class="cta-group reveal">
-      <a href="mailto:contact@drjasmine.com?subject=Living%20Love%20Program%20Application" class="cta-btn">Apply for Living Love Program</a>
-      <a href="mailto:contact@drjasmine.com?subject=Certification%20Application" class="cta-btn-outline">Apply for Certification</a>
+      <a href="mailto:contact@drjasmine.com?subject=Living%20Love%20Program%20Application" class="cta cta-dark">Apply for Living Love Program</a>
+      <a href="mailto:contact@drjasmine.com?subject=Certification%20Application" class="cta cta-outline">Apply for Certification</a>
     </div>
   </div>
 </section>
 
-<!-- IMAGE BREAK: Maui mountains full width -->
-<div class="reveal">
-  <div class="image-break-full" style="background-image: url('images/maui-mountains.jpg');">
-    <div class="image-break-overlay"></div>
-    <div class="image-break-caption">Divine Leadership retreats take place on Maui and at selected sanctuaries worldwide</div>
-  </div>
+<!-- IMAGE BREAK: MAUI MOUNTAINS -->
+<div class="image-break reveal">
+  <div class="image-break-bg" style="background-image:url('images/maui-mountains.jpg')"></div>
+  <div class="image-break-overlay"></div>
+  <div class="image-break-text">Divine Leadership retreats on Maui and at selected sanctuaries worldwide</div>
 </div>
 
 <!-- OFFERINGS -->
@@ -558,43 +518,43 @@
     <h2 class="section-title reveal">Offerings</h2>
     <hr class="section-rule reveal">
 
-    <div class="offerings-list">
-      <div class="offering-item reveal reveal-delay-1">
+    <div class="offering-list">
+      <div class="offering reveal reveal-d1">
         <span class="offering-num">01</span>
         <div>
           <div class="offering-name">Divine Leadership Summits &amp; Retreats</div>
           <p class="offering-desc">Intimate, premium containers for transformation. Designed for leaders and healers ready to operate at the highest level.</p>
         </div>
       </div>
-      <div class="offering-item reveal reveal-delay-2">
+      <div class="offering reveal reveal-d2">
         <span class="offering-num">02</span>
         <div>
           <div class="offering-name">Speaking &amp; Media</div>
           <p class="offering-desc">Keynotes, panels, podcasts. Dr. Jasmine speaks on clinical somatics, conscious leadership, and the Living Love Modality.</p>
         </div>
       </div>
-      <div class="offering-item reveal reveal-delay-3">
+      <div class="offering reveal reveal-d3">
         <span class="offering-num">03</span>
         <div>
           <div class="offering-name">Clinical Somatics</div>
           <p class="offering-desc">Her foundation. The body as a living system &mdash; structural, neurological, and energetic integration.</p>
         </div>
       </div>
-      <div class="offering-item reveal reveal-delay-4">
+      <div class="offering reveal reveal-d4">
         <span class="offering-num">04</span>
         <div>
           <div class="offering-name">Living Love Program</div>
           <p class="offering-desc">$10,000 &mdash; Immersive personal journey with Dr. Jasmine</p>
         </div>
       </div>
-      <div class="offering-item reveal reveal-delay-5">
+      <div class="offering reveal reveal-d5">
         <span class="offering-num">05</span>
         <div>
           <div class="offering-name">Living Love Modality Certification</div>
           <p class="offering-desc">$25,000 &mdash; For practitioners. Graduates become certified facilitators.</p>
         </div>
       </div>
-      <div class="offering-item reveal reveal-delay-6">
+      <div class="offering reveal reveal-d6">
         <span class="offering-num">06</span>
         <div>
           <div class="offering-name">Divine Spark Platform</div>
@@ -605,87 +565,74 @@
   </div>
 </section>
 
-<!-- IMAGE BREAK: Sitting on grass + art print -->
-<div class="image-break reveal">
-  <div class="image-break-half" style="background-image: url('images/sitting-on-grass.jpg'); background-position: top center;">
-    <div class="image-break-overlay"></div>
+<!-- SPLIT: BLUE LACE DRESS -->
+<div class="split reveal" style="direction:rtl">
+  <div class="split-content" style="background:var(--ivory);direction:ltr">
+    <p class="section-label">The Ecosystem</p>
+    <h2 class="section-title">The Living Love Collective</h2>
+    <hr class="section-rule">
+    <p class="section-body">Dr. Jasmine is the founder of the Living Love Collective &mdash; a three-engine editorial ecosystem devoted to pure living, whole-family generational care, and conscious leadership.</p>
   </div>
-  <div class="image-break-half" style="background-image: url('images/mrs-maui-crown.jpg'); background-position: top center;">
-    <div class="image-break-overlay"></div>
-    <div class="image-break-caption">Mrs. Maui &mdash; clinical mastery and conscious transformation</div>
-  </div>
+  <div class="split-image" style="background-image:url('images/blue-lace-dress.jpg');background-position:top center;direction:ltr"></div>
 </div>
 
-<!-- THE LIVING LOVE COLLECTIVE -->
+<!-- ECOSYSTEM GRID -->
 <section id="collective">
   <div class="section-inner">
-    <p class="section-label reveal">The Ecosystem</p>
-    <h2 class="section-title reveal">The Living Love Collective</h2>
-    <hr class="section-rule reveal">
-    <p class="section-body reveal">Dr. Jasmine is the founder of the Living Love Collective &mdash; a three-engine editorial ecosystem devoted to pure living, whole-family generational care, and conscious leadership. Each engine serves a distinct function within the whole.</p>
-
-    <div class="ecosystem-grid">
-      <div class="ecosystem-engine engine-active reveal reveal-delay-1">
-        <p class="engine-label">Engine I &mdash; The Root</p>
-        <h3 class="engine-name">Dr. Jasmine</h3>
-        <p class="engine-body">Clinical somatics, the Living Love Modality, and personal authority. The source from which the ecosystem grows.</p>
+    <div class="eco-grid">
+      <div class="eco-card active reveal reveal-d1">
+        <p class="eco-label">Engine I &mdash; The Root</p>
+        <h3 class="eco-name">Dr. Jasmine</h3>
+        <p class="eco-body">Clinical somatics, the Living Love Modality, and personal authority. The source from which the ecosystem grows.</p>
       </div>
-      <div class="ecosystem-engine reveal reveal-delay-2">
-        <p class="engine-label">Engine II &mdash; The Branches</p>
-        <h3 class="engine-name">Pure Wellness Love</h3>
-        <p class="engine-body">Commerce and sanctuary elements. The lifestyle store, milestone and ritual kits, and the Bloom Circle Registry.</p>
-        <p style="margin-top: 12px;"><a href="https://jack108510.github.io/pure-wellness-joy/" style="font-family: 'Times New Roman', Times, serif; font-size: 12px; color: #c9a84c; text-decoration: none; letter-spacing: 1px;">Visit Pure Wellness Love →</a></p>
+      <div class="eco-card reveal reveal-d2">
+        <p class="eco-label">Engine II &mdash; The Branches</p>
+        <h3 class="eco-name">Pure Wellness Love</h3>
+        <p class="eco-body">Commerce and sanctuary elements. The lifestyle store, milestone and ritual kits, and the Bloom Circle Registry.</p>
+        <a href="https://jack108510.github.io/pure-wellness-joy/" class="eco-link">Visit Pure Wellness Love →</a>
       </div>
-      <div class="ecosystem-engine reveal reveal-delay-3">
-        <p class="engine-label">Engine III &mdash; The Soil</p>
-        <h3 class="engine-name">Well Made Foundation</h3>
-        <p class="engine-body">Humanitarian shield and family care. The MADE Framework, the Shield, and generational family programming.</p>
-        <p style="margin-top: 12px;"><a href="https://jack108510.github.io/well-made-foundation/" style="font-family: 'Times New Roman', Times, serif; font-size: 12px; color: #c9a84c; text-decoration: none; letter-spacing: 1px;">Visit Well Made Foundation →</a></p>
+      <div class="eco-card reveal reveal-d3">
+        <p class="eco-label">Engine III &mdash; The Soil</p>
+        <h3 class="eco-name">Well Made Foundation</h3>
+        <p class="eco-body">Humanitarian shield and family care. The MADE Framework, the Shield, and generational family programming.</p>
+        <a href="https://jack108510.github.io/well-made-foundation/" class="eco-link">Visit Well Made Foundation →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- IMAGE BREAK: Full width art -->
-<div class="reveal">
-  <div class="image-break-full" style="background-image: url('images/art-print.png'); background-position: center;">
-    <div class="image-break-overlay" style="background: rgba(26,25,24,0.15);"></div>
-  </div>
-</div>
+<hr class="gold-divider">
 
 <!-- CULTURAL ROOTS -->
 <section>
-  <div class="section-inner" style="text-align: center;">
+  <div class="section-inner" style="text-align:center">
     <p class="section-label reveal">The Heritage</p>
     <h2 class="section-title reveal">Cultural Roots</h2>
-    <hr class="section-rule reveal" style="margin-left: auto; margin-right: auto;">
+    <hr class="section-rule reveal" style="margin-left:auto;margin-right:auto">
   </div>
-
   <div class="section-inner">
     <div class="pillars">
-      <div class="pillar reveal reveal-delay-1">
+      <div class="pillar reveal reveal-d1">
         <div class="pillar-letter">S</div>
         <h3 class="pillar-name">The Feminine Pillar</h3>
-        <p class="pillar-subtitle">Sampaguita</p>
+        <p class="pillar-sub">Sampaguita</p>
         <p class="pillar-body">Heart in Front of Head. The Sampaguita represents grace, nurturing, and the sacred bond of motherhood. It is the living emblem of this collective.</p>
       </div>
-      <div class="pillar reveal reveal-delay-2">
+      <div class="pillar reveal reveal-d2">
         <div class="pillar-letter">B</div>
         <h3 class="pillar-name">The Masculine Pillar</h3>
-        <p class="pillar-subtitle">Bayani</p>
+        <p class="pillar-sub">Bayani</p>
         <p class="pillar-body">Posture of Victory. The warrior, the structural protection, the noble shield of safety. Strength in service of the family.</p>
       </div>
     </div>
-
-    <p class="cultural-note reveal">The Sampaguita is the national flower of the Philippines -- a living emblem of this collective's commitment to heritage, beauty, and resilience.</p>
+    <p style="margin-top:80px;text-align:center;font-family:var(--serif);font-size:16px;font-style:italic;color:var(--light-gray);max-width:600px;margin-left:auto;margin-right:auto;line-height:1.8" class="reveal">The Sampaguita is the national flower of the Philippines &mdash; a living emblem of this collective's commitment to heritage, beauty, and resilience.</p>
   </div>
 </section>
 
-<!-- IMAGE BREAK: Blue lace dress full width -->
-<div class="reveal">
-  <div class="image-break-full" style="background-image: url('images/blue-lace-dress.jpg'); background-position: top center;">
-    <div class="image-break-overlay"></div>
-  </div>
+<!-- IMAGE BREAK: SITTING ON GRASS -->
+<div class="image-break reveal">
+  <div class="image-break-bg" style="background-image:url('images/sitting-on-grass.jpg');background-position:top center"></div>
+  <div class="image-break-overlay" style="background:rgba(26,26,26,.35)"></div>
 </div>
 
 <!-- SEASONAL PROGRAMMING -->
@@ -696,144 +643,128 @@
     <hr class="section-rule reveal">
     <p class="section-body reveal">A four-season solar calendar guides Dr. Jasmine's programming, aligning personal and collective rhythms with the natural world.</p>
 
-    <div class="seasons-grid">
-      <div class="season reveal reveal-delay-1">
+    <div class="seasons">
+      <div class="season reveal reveal-d1">
         <h3 class="season-name">Spring Equinox</h3>
         <p class="season-quote">"New Beginnings."</p>
-        <p class="season-details">Focus on body care. Rejuvenation of the physical temple. The season of renewal and preparation.</p>
+        <p class="season-body">Focus on body care. Rejuvenation of the physical temple. The season of renewal and preparation.</p>
         <p class="season-flagship">Concludes with the Sampaguita Sunday Gala in May.</p>
       </div>
-      <div class="season reveal reveal-delay-2">
+      <div class="season reveal reveal-d2">
         <h3 class="season-name">Summer Solstice</h3>
         <p class="season-quote">"Push your light out."</p>
-        <p class="season-details">Executive masterclasses. Divine Leadership Summits. The season of maximum expression and outward impact.</p>
+        <p class="season-body">Executive masterclasses. Divine Leadership Summits. The season of maximum expression and outward impact.</p>
       </div>
-      <div class="season reveal reveal-delay-3">
+      <div class="season reveal reveal-d3">
         <h3 class="season-name">Fall Equinox</h3>
         <p class="season-quote">"Reap what you have cultivated."</p>
-        <p class="season-details">Renaissance Showcase. Initiates the application process for winter masterclasses. Harvest and assessment.</p>
+        <p class="season-body">Renaissance Showcase. Initiates the application process for winter masterclasses. Harvest and assessment.</p>
       </div>
-      <div class="season reveal reveal-delay-4">
+      <div class="season reveal reveal-d4">
         <h3 class="season-name">Winter Solstice</h3>
         <p class="season-quote">"Sacred Reset."</p>
-        <p class="season-details">Candle-Lit Labyrinth &amp; Silent Retreat on Maui. Sovereign Couples Retreat. Promotes the Sacred Rosary Transition Framework for end-of-life care.</p>
+        <p class="season-body">Candle-Lit Labyrinth &amp; Silent Retreat on Maui. Sovereign Couples Retreat. Promotes the Sacred Rosary Transition Framework for end-of-life care.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- IMAGE: Healing / hands -->
-<div class="reveal" style="padding: 0;">
-  <img src="images/mysticbella_close_up_of_hands_over_someones_heart_light_pouri_91b5e347-da1c-4869.jpg" alt="Healing hands" class="img-contained" style="max-height: 440px;">
-  <p class="img-caption">Clinical Somatics &mdash; the body as a living system</p>
+<!-- HEALING IMAGE -->
+<div class="reveal" style="text-align:center;padding:0 48px">
+  <img src="images/mysticbella_close_up_of_hands_over_someones_heart_light_pouri_91b5e347-da1c-4869.jpg" alt="Healing hands" style="width:100%;max-width:900px;max-height:480px;object-fit:cover;display:block;margin:0 auto">
+  <p style="font-family:var(--serif);font-size:11px;font-style:italic;color:var(--light-gray);text-align:center;padding:20px 0;letter-spacing:.5px">Clinical Somatics &mdash; the body as a living system</p>
 </div>
 
 <!-- CONTACT -->
-<section id="contact" class="contact-section">
+<section id="contact" class="contact">
   <div class="section-inner">
     <p class="section-label reveal">Connect</p>
     <h2 class="section-title reveal">Contact</h2>
-    <hr class="section-rule reveal" style="margin-left: auto; margin-right: auto;">
+    <hr class="section-rule reveal" style="margin-left:auto;margin-right:auto">
     <p class="contact-body reveal">To learn more about the Living Love Modality, inquire about retreats, or explore certification pathways, reach out.</p>
     <a href="mailto:contact@drjasmine.com" class="contact-email reveal">contact@drjasmine.com</a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<!-- THE LIVING LOVE COLLECTIVE GLOBAL MINIMALIST FOOTER -->
-<footer style="padding: 60px 20px; background-color: #fdfbf7; border-top: 1px solid #eae7e2; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
- <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
-
- <h2 style="font-family: 'Times New Roman', Times, serif; font-size: 16px; letter-spacing: 4px; text-transform: uppercase; color: #1a1918; margin-bottom: 8px; font-weight: 400;">
- The Living Love Collective
- </h2>
- <p style="font-family: 'Times New Roman', Times, serif; font-size: 12px; font-style: italic; color: #76716d; margin-bottom: 40px;">
- An editorial ecosystem of pure living, whole-family generational care, and conscious leadership.
- </p><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; text-align: left; margin-bottom: 40px; border-bottom: 1px solid #eae7e2; padding-bottom: 40px;">
-
- <!-- Engine I -->
- <div>
- <h3 style="font-family: 'Times New Roman', Times, serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #3d3a38; margin-bottom: 12px;">PURE WELLNESS LOVE</h3>
- <p style="font-size: 11px; color: #76716d; line-height: 1.6; margin-bottom: 12px;">The Branches (Commerce &amp; Sanctuary Elements)</p>
- <ul style="list-style: none; padding: 0; font-size: 12px; line-height: 2;">
- <li><a href="https://jack108510.github.io/pure-wellness-joy/#store" style="color: #4a4643; text-decoration: none;">Shop The Lifestyle Store</a></li>
- <li><a href="https://jack108510.github.io/pure-wellness-joy/#bloom" style="color: #4a4643; text-decoration: none;">Join The Bloom Circle Registry</a></li>
- <li><a href="https://jack108510.github.io/pure-wellness-joy/#store" style="color: #4a4643; text-decoration: none;">Explore Milestone &amp; Ritual Kits</a></li>
- </ul>
- </div>
-
- <!-- Engine II -->
- <div>
- <h3 style="font-family: 'Times New Roman', Times, serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #3d3a38; margin-bottom: 12px;">WELL MADE FOUNDATION</h3>
- <p style="font-size: 11px; color: #76716d; line-height: 1.6; margin-bottom: 12px;">The Soil (Humanitarian Shield &amp; Family Care)</p>
- <ul style="list-style: none; padding: 0; font-size: 12px; line-height: 2;">
- <li><a href="https://jack108510.github.io/well-made-foundation/#membership" style="color: #4a4643; text-decoration: none;">Donate: $30 Lifetime Family Entry</a></li>
- <li><a href="https://jack108510.github.io/well-made-foundation/#programs" style="color: #4a4643; text-decoration: none;">Mothers &amp; Daughters / Moms &amp; Dads Empowered</a></li>
- <li><a href="https://jack108510.github.io/well-made-foundation/#programs" style="color: #4a4643; text-decoration: none;">Participate in the Family Pentathlon</a></li>
- </ul>
- </div>
-
- <!-- Engine III -->
- <div>
- <h3 style="font-family: 'Times New Roman', Times, serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #3d3a38; margin-bottom: 12px;">DR. JASMINE</h3>
- <p style="font-size: 11px; color: #76716d; line-height: 1.6; margin-bottom: 12px;">The Root (Clinical Somatics &amp; Personal Authority)</p>
- <ul style="list-style: none; padding: 0; font-size: 12px; line-height: 2;">
- <li><a href="https://jack108510.github.io/dr-jasmine-site/#offerings" style="color: #4a4643; text-decoration: none;">Learn About the Divine Spark Platform</a></li>
- <li><a href="https://jack108510.github.io/dr-jasmine-site/#practice" style="color: #4a4643; text-decoration: none;">Advanced Somatic Practitioner Frameworks</a></li>
- <li><a href="https://jack108510.github.io/dr-jasmine-site/#offerings" style="color: #4a4643; text-decoration: none;">Executive Leadership Summits &amp; Retreats</a></li>
- </ul>
- </div>
-
- </div>
-
- <p style="font-size: 11px; color: #a39e99; letter-spacing: 1px;">
- &copy; 2026 The Living Love Collective. Founded and guided with complete devotion by Dr. Jasmine Therese Esguerra.
- </p>
-
- </div>
+<footer>
+<div class="footer-inner">
+  <h2 class="footer-title">The Living Love Collective</h2>
+  <p class="footer-sub">An editorial ecosystem of pure living, whole-family generational care, and conscious leadership.</p>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3 class="footer-col-title">Pure Wellness Love</h3>
+      <p class="footer-col-desc">The Branches (Commerce &amp; Sanctuary Elements)</p>
+      <ul>
+        <li><a href="https://jack108510.github.io/pure-wellness-joy/#store">Shop The Lifestyle Store</a></li>
+        <li><a href="https://jack108510.github.io/pure-wellness-joy/#bloom">Join The Bloom Circle Registry</a></li>
+        <li><a href="https://jack108510.github.io/pure-wellness-joy/#store">Explore Milestone &amp; Ritual Kits</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3 class="footer-col-title">Well Made Foundation</h3>
+      <p class="footer-col-desc">The Soil (Humanitarian Shield &amp; Family Care)</p>
+      <ul>
+        <li><a href="https://jack108510.github.io/well-made-foundation/#membership">Donate: $30 Lifetime Family Entry</a></li>
+        <li><a href="https://jack108510.github.io/well-made-foundation/#programs">Mothers &amp; Daughters / Moms &amp; Dads Empowered</a></li>
+        <li><a href="https://jack108510.github.io/well-made-foundation/#programs">Participate in the Family Pentathlon</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3 class="footer-col-title">Dr. Jasmine</h3>
+      <p class="footer-col-desc">The Root (Clinical Somatics &amp; Personal Authority)</p>
+      <ul>
+        <li><a href="https://jack108510.github.io/dr-jasmine-site/#offerings">Learn About the Divine Spark Platform</a></li>
+        <li><a href="https://jack108510.github.io/dr-jasmine-site/#practice">Advanced Somatic Practitioner Frameworks</a></li>
+        <li><a href="https://jack108510.github.io/dr-jasmine-site/#offerings">Executive Leadership Summits &amp; Retreats</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; 2026 The Living Love Collective. Founded and guided with complete devotion by Dr. Jasmine Therese Esguerra.</p>
+</div>
 </footer>
 
 <script>
-// Scroll reveal with IntersectionObserver
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+// Scroll reveal
+const obs=new IntersectionObserver(e=>{
+  e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')})
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Parallax on hero background
-const heroBg = document.getElementById('heroBg');
-let ticking = false;
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      const scrolled = window.pageYOffset;
-      if (heroBg && scrolled < window.innerHeight) {
-        heroBg.style.transform = `translate3d(0, ${scrolled * 0.35}px, 0)`;
-      }
-      ticking = false;
-    });
-    ticking = true;
-  }
+// Hero parallax
+const hb=document.getElementById('heroBg');
+let tk=false;
+window.addEventListener('scroll',()=>{
+  if(!tk){requestAnimationFrame(()=>{
+    const s=window.pageYOffset;
+    if(hb&&s<window.innerHeight)hb.style.transform=`translate3d(0,${s*.35}px,0)`;
+    tk=false;
+  });tk=true}
 });
 
-// Nav hide/show on scroll
-let lastScroll = 0;
-const nav = document.querySelector('nav');
-window.addEventListener('scroll', () => {
-  const current = window.pageYOffset;
-  if (current > lastScroll && current > 100) {
-    nav.style.transform = 'translateY(-100%)';
-  } else {
-    nav.style.transform = 'translateY(0)';
-  }
-  lastScroll = current;
+// Nav hide/show
+let ls=0;const nv=document.querySelector('nav');
+window.addEventListener('scroll',()=>{
+  const c=window.pageYOffset;
+  if(c>ls&&c>100)nv.style.transform='translateY(-100%)';
+  else nv.style.transform='translateY(0)';
+  ls=c;
+});
+
+// Image break parallax
+document.querySelectorAll('.image-break-bg').forEach(bg=>{
+  const parent=bg.parentElement;
+  let t=false;
+  window.addEventListener('scroll',()=>{
+    if(!t){requestAnimationFrame(()=>{
+      const r=parent.getBoundingClientRect();
+      const c=r.top+r.height/2;
+      const v=window.innerHeight/2;
+      bg.style.transform=`translateY(${(c-v)*.12}px)`;
+      t=false;
+    });t=true}
+  });
 });
 </script>
-
 </body>
 </html>
