@@ -140,9 +140,19 @@ footer{background:var(--charcoal);color:#fff;padding:100px 80px 60px;border-top:
 .footer-col ul li a:hover{color:var(--gold)}
 .footer-copy{text-align:center;color:rgba(255,255,255,.3);font-size:12px;letter-spacing:.5px;padding-top:40px;border-top:1px solid rgba(255,255,255,.08)}
 
+/* New sections */
+.about-bio{padding:160px 80px}
+.somatic-postures{padding:160px 80px}
+.divine-spark-book{padding:160px 80px}
+.feng-shui{padding:160px 80px}
+@media(max-width:768px){
+  .about-bio>div,.somatic-postures>div>div:last-child{grid-template-columns:1fr!important;gap:60px!important}
+  .somatic-postures>div>div:last-child{grid-template-columns:1fr!important;gap:40px!important}
+}
+
 /* Mobile */
 @media(max-width:1024px){
-  .section-pad,.practice,.living-love,.summits,.speaking,.divine-spark,.cultural,.calendar,.ecosystem{padding:100px 40px}
+  .section-pad,.practice,.living-love,.summits,.speaking,.divine-spark,.cultural,.calendar,.ecosystem,.about-bio,.somatic-postures,.divine-spark-book,.feng-shui{padding:100px 40px}
   .practice-inner,.summits-inner,.divine-spark-inner,.offering{grid-template-columns:1fr;gap:60px}
   .roots-grid{grid-template-columns:1fr;gap:40px}
   .seasons{grid-template-columns:1fr 1fr}
@@ -153,7 +163,7 @@ footer{background:var(--charcoal);color:#fff;padding:100px 80px 60px;border-top:
   .footer-grid{grid-template-columns:1fr;gap:40px;text-align:center}
 }
 @media(max-width:640px){
-  .section-pad,.practice,.living-love,.summits,.speaking,.divine-spark,.cultural,.calendar,.ecosystem{padding:140px 48px}
+  .section-pad,.practice,.living-love,.summits,.speaking,.divine-spark,.cultural,.calendar,.ecosystem,.about-bio,.somatic-postures,.divine-spark-book,.feng-shui{padding:140px 48px}
   nav .nav-links{display:none}
   .hero-content{padding:0 24px 60px}
   .seasons{grid-template-columns:1fr 1fr;gap:20px}
@@ -190,6 +200,72 @@ footer{background:var(--charcoal);color:#fff;padding:100px 80px 60px;border-top:
   </div>
   <span class="hero-scroll">Scroll</span>
 </section>
+
+<!-- About / Bio -->
+<section class="about-bio" style="background:var(--cream);padding:160px 80px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center">
+    <div class="reveal-left">
+      <div style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:40px">About</div>
+      <h2 style="font-size:clamp(40px,5vw,72px);font-weight:300;line-height:1.1;margin-bottom:40px">The Doctor</h2>
+      <div class="gold-line"></div>
+      <p style="font-size:15px;line-height:2;color:#555;margin-bottom:24px">Dr. Jasmine Therese Esguerra is a clinical somatic practitioner, chiropractor, and the founding steward of The Living Love Collective — an editorial ecosystem devoted to whole-family generational care through somatic medicine, cultural preservation, and community architecture.</p>
+      <p style="font-size:15px;line-height:2;color:#555;margin-bottom:24px">Rooted in Filipino heritage — the Sampaguita lineage of her maternal grandmother — Dr. Jasmine carries forward the wisdom of the islands into a modern clinical framework. Her practice lives at the intersection of ancestral knowing and somatic precision, where the body is not a problem to solve but a story to remember.</p>
+      <p style="font-size:15px;line-height:2;color:#555">Based in Maui, she serves families, practitioners, and leaders who are called to anchor their lineage in power rather than pattern — building not just healthier bodies, but generational architecture that endures.</p>
+    </div>
+    <div class="reveal-right">
+      <img src="images/mysticbella_stock_photograph_for_how_emotional_healing_restor_933303ed-89c0-460b.jpg" alt="Dr. Jasmine" style="width:100%;height:650px;object-fit:cover;display:block">
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- Somatic Postures -->
+<section class="somatic-postures" style="padding:160px 80px">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="reveal" style="text-align:center;margin-bottom:80px">
+      <div style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:40px">Foundational Postures</div>
+      <h2 style="font-size:clamp(36px,4.5vw,60px);font-weight:300">Somatic Postures</h2>
+      <div class="gold-line" style="margin:20px auto 0"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px">
+      <div class="reveal" style="padding:60px 50px;border:1px solid var(--cream);border-left:3px solid var(--gold);position:relative">
+        <div style="font-family:'Playfair Display',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:30px">Posture I</div>
+        <h3 style="font-size:26px;font-weight:400;line-height:1.3;margin-bottom:20px">Heart in Front of Head<br><span style="font-size:18px;color:#888;font-style:italic">(The Posture of Pure Wellness)</span></h3>
+        <p style="font-size:14px;line-height:2;color:#666">Relaxes the overactive nervous system, shifts consciousness from survival into receptive grace, and lowers systemic mental resistance. This is the posture of surrender — not weakness, but the kind of strength that only comes when the body finally feels safe enough to soften.</p>
+      </div>
+      <div class="reveal" style="padding:60px 50px;border:1px solid var(--cream);border-left:3px solid var(--gold);position:relative">
+        <div style="font-family:'Playfair Display',serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:30px">Posture II</div>
+        <h3 style="font-size:26px;font-weight:400;line-height:1.3;margin-bottom:20px">Light of Victory Embodied<br><span style="font-size:18px;color:#888;font-style:italic">(The Posture of Victory)</span></h3>
+        <p style="font-size:14px;line-height:2;color:#666">Unfolds the physical structure, rolls back the shoulders, lifts the chest, and steps into unshakeable spiritual authority. This is the posture of declaration — when the body becomes the architecture of conviction, and presence itself becomes the practice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divine Spark Book -->
+<section class="divine-spark-book" style="background:#1a1a1a;padding:160px 80px;text-align:center">
+  <div class="reveal" style="max-width:800px;margin:0 auto">
+    <div style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:40px">The Foundational Text</div>
+    <h2 style="font-size:clamp(48px,6vw,96px);font-weight:300;color:var(--gold);line-height:1.05;margin-bottom:40px">Divine Spark</h2>
+    <div class="gold-line" style="margin:0 auto 40px"></div>
+    <p style="font-size:16px;line-height:2;color:rgba(255,255,255,.6);max-width:600px;margin:0 auto 60px">The foundational text by Dr. Jasmine. Energetic mechanics, somatic protocols, and the architecture of whole-family care. Available exclusively through the Divine Spark Platform.</p>
+    <a href="mailto:jack@wildroseautomations.ca?subject=Divine%20Spark%20-%20Request%20Access&body=Name%3A%0ALocation%3A%0A%0AI%20would%20like%20to%20request%20access%20to%20Divine%20Spark." style="display:inline-block;padding:16px 48px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;transition:all .3s" onmouseover="this.style.background='var(--gold)';this.style.color='#1a1a1a'" onmouseout="this.style.background='transparent';this.style.color='var(--gold)'">Request Access</a>
+  </div>
+</section>
+
+<!-- Feng Shui -->
+<section class="feng-shui" style="background:var(--cream);padding:160px 80px;text-align:center">
+  <div class="reveal" style="max-width:800px;margin:0 auto">
+    <div style="font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:40px">Spatial Design</div>
+    <h2 style="font-size:clamp(36px,4.5vw,60px);font-weight:300;margin-bottom:40px">Residential Feng Shui<br>Layouts</h2>
+    <div class="gold-line" style="margin:0 auto 40px"></div>
+    <p style="font-size:16px;line-height:2;color:#555;max-width:650px;margin:0 auto 60px">Custom spatial design consultations that align living environments with somatic and energetic principles. Each layout is tailored to the family's lineage, milestone calendar, and cultural heritage — because the spaces we inhabit shape the stories we carry.</p>
+    <a href="mailto:jack@wildroseautomations.ca?subject=Feng%20Shui%20Consultation%20Inquiry&body=Name%3A%0ALocation%3A%0A%0AI%20am%20interested%20in%20a%20Residential%20Feng%20Shui%20consultation." style="display:inline-block;padding:14px 40px;border:1px solid var(--gold);color:var(--charcoal);text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;transition:all .3s" onmouseover="this.style.background='var(--gold)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--charcoal)'">Inquire</a>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
 
 <!-- The Practice -->
 <section class="practice" id="practice">
